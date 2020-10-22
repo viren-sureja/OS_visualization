@@ -11,7 +11,7 @@ function EntrySection(process) {
 	interest[process] = true;
 	turn = process;
 	
-	while(interest[other]=true && turn==process)
+	while(interest[other]==true && turn==process)
 	{
 		
 	}
@@ -22,7 +22,8 @@ function EntrySection(process) {
 function CriticalSection(process) {
 	var millisecondsToWait = 2500;
 	setTimeout(function() {
-		
+		// Uncommenty the next line to see how dynamically the algorithm works, NOTE it is an instance of the working and not the working itself.
+		// EntrySection(1-process);
 	}, millisecondsToWait);
 	
 	ExitSection(process)
@@ -30,7 +31,9 @@ function CriticalSection(process) {
 
 function ExitSection(process) {
 	interest[process]=false;
+	console.log("Completed Process" + process);
 }
 
 
-//EntrySection(Process0);
+EntrySection(Process0);
+EntrySection(Process1);
