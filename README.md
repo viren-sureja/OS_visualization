@@ -22,7 +22,7 @@ git commit -m "Your message"
 
 then push to your branch on github by 
 
-git push origin <Name of your branch you created in the first step>
+git push origin < Name of your branch you created in the first step >
 
 Note replace <> with the name
 
