@@ -4,16 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Counting Semaphore</title>
-		<script src="index.js"></script>
-		<script src="algorithm.js"></script>
 	</head>
 	<body>
 		<h3>Counting Semaphore</h3>
 		<br />
 		<div class="dataInput">
 			Initialized Semaphore value:
-			<input type="number" min="1" id="initial_Sema" required />
-			<button onclick="printInput()" id="submitButton">submit</button>
+			<input type="number" value="0" min="1" id="initial_Sema" required />
+			<button id="submitButton">submit</button>
 		</div>
 
 		<br />
@@ -27,7 +25,7 @@
 		<span>*************</span>
 		<br />
 		Semaphore Value:
-		<span>*************</span>
+		<span id="semaClass">*************</span>
 		<br />
 		<!-- 	Ongoing Queue:
 		<span>*************</span>
@@ -43,5 +41,8 @@
 		<br />
 		<button type="reset">reset</button>
 		<br />
+
+		<!-- js -->
+		<script type="module" src="index.js"></script>
 	</body>
 </html>
