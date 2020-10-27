@@ -1,17 +1,15 @@
 // var Session = require("./algo/algorithm.js");	// for node
 import { Session } from "./algo/algorithm.js";
 
-let obj = new Session(5);
-
 var subBut = document.getElementById("submitButton");
-var semaClass = document.getElementById("semaClass");
+
+var session; // object of session class.
 
 subBut.addEventListener("click", () => {
-	var semaVal = parseInt(document.getElementById("initial_Sema").value);
-	semaClass.innerHTML = semaVal;
-
-	var time = setInterval(() => {
-		if (semaVal <= 20) clearInterval(time);
-		semaClass.innerHTML = semaVal--;
-	}, 500);
+	let semaVal = document.getElementById("initial_Sema").value;
+	if (!semaVal) alert("enter the semaphore value greater than 0.");
+	// use fancy pop up instead of alert
+	else {
+		session = new Session(semaVal);
+	}
 });
