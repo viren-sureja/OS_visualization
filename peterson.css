@@ -1,0 +1,90 @@
+body {
+    background-color: #226b98;
+}
+
+.Start {
+    position: relative;
+    background-color: rgb(46, 210, 255);
+    width: 50px;
+    height: 180px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: -170px;
+    margin-left: 100px;
+    z-index: 0;
+}
+
+.CS {
+    position: relative;
+    background-color: rgb(46, 210, 255);
+    width: 100px;
+    height: 180px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: -180px;
+    margin-left: 290px;
+    z-index: 0;
+}
+
+.End {
+    position: relative;
+    background-color: rgb(46, 210, 255);
+    width: 50px;
+    height: 180px;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: -180px;
+    margin-left: 720px;
+    z-index: 0;
+}
+
+.P0 {
+    background-color: #0fb1ec;
+    color: #6cceff;
+    border-radius: 10px;
+    font-size: 70px;
+    text-align: center;
+    /* margin: 200px; */
+    height: 80px;
+    width: 80px;
+    position: relative;
+    animation-name: P00;
+    animation-duration: 8s;
+    z-index: 1;
+}
+
+@keyframes P00 {
+    0%   {left:0px; top:0px;}
+    25%  {left:150px; top:0px;}
+    50%  {left:300px; top:0px;}
+    70%  {left:300px; top:0px;}
+    75%  {left:550px; top:0px;}
+    100% {left:800px; top:0px;}
+  }
+
+
+.P1 {
+    background-color: #0fb1ec;
+    color:#6cceff;
+    border-radius: 10px;
+    font-size: 70px;
+    text-align: center;
+    /* margin: 200px; */
+    height: 80px;
+    width: 80px;
+    position: relative;
+    animation-name: P01;
+    animation-duration: 8s;
+    z-index: 1;
+}
+
+@keyframes P01 {
+    0%   {left:0px; top:0px;}
+    25%  {left:0px; top:0px;}
+    50%  {left:0px; top:0px;}
+    70%  {left:150px; top:0px;}
+    75%  {left:150px; top:0px;}
+    80%  {left:300px; top:0px;}
+    90%  {left:500px; top:0px;}
+    100% {left:800px; top:0px;}
+  }
