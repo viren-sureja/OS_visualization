@@ -2,6 +2,13 @@
 
 import { Queue } from "./queue.js";
 
+function sleep(milli) {
+	const DateTime = Date.now();
+	let currDateTime = null;
+	do {
+		currDateTime = Date.now();
+	} while (currDateTime - DateTime < milli);
+}
 export class Session {
 	constructor(semaphore) {
 		this.ReadyQueue = new Queue();
