@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+body {
+    overflow:hidden;
+    margin:0;
+    background-color:#221f26;
+    z-index: 0;
+  }
+
+.webGl {
+    z-index: 5;
+}
+
+.working {
+    z-index: 3;
+    
+
+    font-size: 100px;
+    background-color: aliceblue;
+}  
+
+
+.dashed-box { 
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+   
+  }
+  .gold-box { 
+    position: absolute;
+    z-index: 2; /* put .gold-box above .green-box and .dashed-box */
+   
+  }
+
+  .labelClass { 
+    width: 100%;  
+    position: absolute;
+    z-index: 3; /* put .green-box above .dashed-box */
+  }
+
+  .buttonClass {
+    width: 100%;  
+    position: absolute;
+    z-index: 5; 
+  }
+
+  .labelClass p{
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+
+    
+  }
+  .green-box { 
+    padding-left: 100px; 
+    padding-top: 10%; 
+    width: 100%;  
+    position: absolute;
+    z-index: 4; /* put .green-box above .dashed-box */
+  }
+
+
+
+  
+  
+  .element1 {
+    /* transform: translate(-50%, -50%); */
+    position: absolute;
+    padding: auto;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to right, #ff9068, #ff4b1f);
+  }
+
+  .element1 p {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .element2 {
+    margin-top: 300px;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(to right, #0ce41ee1, #06580de1);
+  }
+
+  .element2 p {
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .myCol {
+      color: #fff;
+      
+     
+      display: flex;
+  }
+  
+  .rowMargin{
+      margin-left: 30px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 600px;
+    margin: 1rem;
+    position: relative;
+    width: 200px;
+  }
+
+  .card1 {
+    background: #fff;
+    border-radius: 2px;
+    display: inline-block;
+    height: 600px;
+    margin: 1rem;
+    position: relative;
+    width: 300px;
+  }
+  .card-5 {
+    box-shadow: 0 19px 38px rgba(255, 255, 255, 0.3), 0 15px 12px rgba(255, 255, 255, 0.22);
+  }
+    
+
+
+  #buttonD {
+      margin-top: 30%;
+      margin-left: 50%;
+  }
