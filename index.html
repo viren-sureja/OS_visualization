@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Counting Semaphore</title>
+	</head>
+	<body>
+		<h3>Counting Semaphore</h3>
+		<br />
+		<div class="dataInput">
+			Initialized Semaphore value:
+			<input type="number" min="1" id="initial_Sema" required />
+			<button id="submitButton">submit</button>
+		</div>
+
+		<br />
+		<br />
+		<!-- currently under work -->
+		<!-- increment the no. of process
+		<button>increment</button>
+		<br /> -->
+		<br />
+		Semaphore Value:
+		<span id="semaVal">-----------------</span>
+		<br />
+		Capacity Value:
+		<span id="capaVal">-----------------</span>
+		<br />
+		Ready Queue:
+		<span id="readyQ">-----------------</span>
+		<br />
+		<!-- 	Ongoing Queue:
+		<span>*************</span>
+		<br /> -->
+		Critical Section Queue:
+		<span id="criticalQ">-----------------</span>
+		<br />
+		Suspended Queue:
+		<span id="suspendedQ">-----------------</span>
+		<br />
+		Completed Processes:
+		<span id="completedQ">-----------------</span>
+		<br />
+		<button type="reset">reset</button>
+		<br />
+
+		<!-- js -->
+		<script type="module" src="index.js"></script>
+		<!-- <script src="temp.js"></script> -->
+	</body>
+</html>
