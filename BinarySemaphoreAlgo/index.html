@@ -6,10 +6,15 @@
 		<title>Binary Semaphore</title>
 	</head>
 	<body>
-		<img id="p0" src="img/p0.png" />
-		<img id="p1" src="img/p1.png" />
-		<button class="right" id="b1" onclick="verify('p0')">P0</button>
-		<button class="right" id="b2" onclick="verify('p1')">P1</button>
+		<div id="insertImg">
+			<img id="p0" src="img/p0.png" />
+			<img id="p1" src="img/p1.png" />
+		</div>
+		<div id="insertButton">
+			<button class="right" id="b0" onclick="verify('p0')">P0</button>
+			<button class="right" id="b1" onclick="verify('p1')">P1</button>
+		</div>
+
 		<div id="main">
 			<h1 style="left: 350px">Binary Semaphore</h1>
 			<h3 style="left: 200px">Ready Queue</h3>
@@ -23,6 +28,7 @@
 			<!-- <input type="text" id="sem" value="Register: N" readonly />
 			<input type="text" id="loc" value="Lock: 0" readonly /> -->
 		</div>
+		<button id="incre" onclick="addProcesses()">increment</button>
 		<div id="sem"></div>
 		<link rel="stylesheet" href="index.css" />
 		<script src="index.js"></script>

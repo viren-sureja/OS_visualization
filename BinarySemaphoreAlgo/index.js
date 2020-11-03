@@ -1,3 +1,5 @@
+var size = 1;
+
 var i0 = 1;
 var i1 = 1;
 
@@ -7,87 +9,72 @@ const inCS = 3;
 const inCQ = 4;
 var semaphore = 1;
 var semArea = document.getElementById("sem");
+semArea.innerHTML = 1;
+
+var insertImg = document.getElementById("insertImg");
+
+var insertButton = document.getElementById("insertButton");
+
+// map for process;
+var processes = new Map();
+processes.set("p0", { value: 1 });
+processes.set("p1", { value: 1 });
+
+async function addProcesses() {
+	size++;
+	let temp = size.toString();
+	let name = "p" + temp; // p2
+	let buttonName = "b" + temp; // b2
+	processes.set(name, { value: 1 });
+	insertButton.innerHTML += `<button class="right" id=${buttonName} onclick="verify(${name})">${name}</button>`;
+	// button pos variable
+	insertImg.innerHTML += `<img id=${name} src="img/p${size}.png" />`;
+	document.getElementById(name).style = `img#${name} {
+	                    width: 38px;
+	                    margin-top: -80px;
+                    }`;
+}
 
 async function verify(val) {
-	if (val == "p0") {
-		if (i0 == inRQ) {
-			if (semaphore == 1) {
-				semaphore = 0;
-				i0 = 3;
-				console.log(val[1]);
-				moveToSemaphore(val);
-				semArea.innerHTML = semaphore;
-			} else {
-				moveright(val);
-				i0 = 2;
-			}
-		} else if (i0 == inSQ) {
-			if (semaphore == 1) {
-				moveright(val);
-				i0 = 3;
-				semaphore = 0;
-				semArea.innerHTML = semaphore;
-			} else {
-				alert("wait for the process to complete!");
-			}
-		} else if (i0 == inCS) {
-			moveright(val);
-			semaphore = 1;
-			i0 = 4;
+	if (processes.get(val).value == inRQ) {
+		if (semaphore == 1) {
+			semaphore = 0;
+			processes.get(val).value = 3;
+			console.log(val[1]);
+			moveToSemaphore(val);
 			semArea.innerHTML = semaphore;
-		} else if (i0 == inCQ) {
-			alert(`process ${val} is already completed!`);
-		}
-	}
-	if (val == "p1") {
-		if (i1 == inRQ) {
-			if (semaphore == 1) {
-				console.log(val[1]);
-				moveToSemaphore(val);
-				semaphore = 0;
-				i1 = 3;
-				semArea.innerHTML = semaphore;
-			} else {
-				moveright(val);
-				i1 = 2;
-			}
-		} else if (i1 == inSQ) {
-			if (semaphore == 1) {
-				moveright(val);
-				semaphore = 0;
-				i1 = 3;
-				semArea.innerHTML = semaphore;
-			} else {
-				alert("wait for the process to complete!");
-			}
-		} else if (i1 == inCS) {
+		} else {
 			moveright(val);
-			semaphore = 1;
-			i1 = 4;
-			semArea.innerHTML = semaphore;
-		} else if (i1 == inCQ) {
-			alert(`process ${val} is already completed!`);
+			processes.get(val).value = 2;
 		}
+	} else if (processes.get(val).value == inSQ) {
+		if (semaphore == 1) {
+			moveright(val);
+			processes.get(val).value = 3;
+			semaphore = 0;
+			semArea.innerHTML = semaphore;
+		} else {
+			alert("wait for the process to complete!");
+		}
+	} else if (processes.get(val).value == inCS) {
+		moveright(val);
+		semaphore = 1;
+		processes.get(val).value = 4;
+		semArea.innerHTML = semaphore;
+	} else if (processes.get(val).value == inCQ) {
+		alert(`process ${val} is already completed!`);
 	}
 }
 
-async function moveleft(val) {
-	const img = document.getElementById(val);
-	img.style.left = `${img.offsetLeft - 170}px`;
-
-	await sleep(1000);
-}
 async function moveToSemaphore(val) {
 	var cs = document.getElementById("box2");
-
-	lock = 0;
 
 	const img = document.getElementById(val);
 	img.style.left = `${img.offsetLeft + 340}px`;
 
 	await sleep(1000);
 
-	if (i0 == 3 || i1 == 3) {
+	if (!semaphore) {
 		cs.style.borderColor = "#ff4136";
 	} else {
 		cs.style.borderColor = "#2ecc40";
@@ -96,14 +83,12 @@ async function moveToSemaphore(val) {
 async function moveright(val) {
 	var cs = document.getElementById("box2");
 
-	lock = 0;
-
 	const img = document.getElementById(val);
 	img.style.left = `${img.offsetLeft + 170}px`;
 
 	await sleep(1000);
 
-	if (i0 == 3 || i1 == 3) {
+	if (!semaphore) {
 		cs.style.borderColor = "#ff4136";
 	} else {
 		cs.style.borderColor = "#2ecc40";
