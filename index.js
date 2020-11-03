@@ -3,7 +3,8 @@ import { Session } from "./algo/algorithm.js";
 
 var subBut = document.getElementById("submitButton");
 
-var session; // object of session class.
+// object of session class.
+var session;
 
 subBut.addEventListener("click", () => {
 	let semaVal = document.getElementById("initial_Sema").value;
@@ -12,4 +13,9 @@ subBut.addEventListener("click", () => {
 	else {
 		session = new Session(semaVal);
 	}
+});
+
+var increButton = document.getElementById("increButton");
+increButton.addEventListener("click", () => {
+	session.addCapacity(1);
 });
