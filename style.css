@@ -1,0 +1,113 @@
+h1{
+  color:blue;
+}
+
+p{
+  color: black;
+  font-size: 3rem;
+}
+
+button{
+  margin:10px;
+  margin-top:20px;
+  margin-bottom:20px;
+}
+
+.box2_heading{
+  color:blue;
+  font-size:1rem;
+}
+
+.box1{
+  text-align:center;
+  border:black solid 7px;
+  border-radius:8px;
+  width: 55%;
+  height: 200px;
+  margin-left:10%;
+  margin-top: 30px;
+  position:relative;
+}
+
+.box2{
+  text-align:center;
+  border:black solid 7px;
+  border-radius:8px;
+  height: 150px;
+  width:55%;
+  margin-left:10%;
+  margin-top: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.box3{
+    text-align:center;
+    border:black solid 7px;
+    border-radius:8px;
+    height: 150px;
+    width:55%;
+    margin-left:10%;
+    margin-top: 30px;
+    position: relative;
+    display: inline-block;
+}
+.box4{
+  text-align:center;
+  border:black solid 7px;
+  border-radius:8px;
+  width: 55%;
+  height: 150px;
+  margin-left:10%;
+  margin-top: 30px;
+  position:relative;
+}
+
+
+#P0{
+  border-radius:100%;
+  margin-left:200px;
+  position: absolute;
+  
+
+}
+
+
+#P1{
+  border-radius:100%;
+  margin-left:800px;
+  position: absolute;
+}
+
+img{
+  position: absolute;
+    left: 0px;
+    top: 310px;
+    width: 77px;
+  transition-duration: 2s;
+  
+  
+
+}
+body{
+  background-color: #eeeeee;
+}
+input{
+  background-color: transparent;
+  text-align: center;
+  font-weight: bolder;
+}
+
+/*
+.End-process0{
+  z-index:1;
+  position:absolute;
+  display: inline-block;
+  margin-left:auto;
+}
+
+
+.End-process1{
+  position:absolute;
+  display: inline-block;
+} */
