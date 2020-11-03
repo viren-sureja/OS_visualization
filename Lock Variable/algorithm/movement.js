@@ -32,7 +32,16 @@
  
  var count = 0;
  
+ //Add sleep here if using
+ function continuousMovement(){
+    movement('.element1',700,300,0.43);
+    movement('.element2',500,300,0.53);
+    movement('.element1',1200,300,0.73);
+    movement('.element2',700,300,0.43);
+    movement('.element2',1200,300,0.73);
+ }
 
+//  continuousMovement();
   
   function element2(){
       if(count == 0){

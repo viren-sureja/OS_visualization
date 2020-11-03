@@ -3,21 +3,11 @@
 body {
     overflow:hidden;
     margin:0;
-    background-color:#221f26;
+    background-color:#ACDDDE;
     z-index: 0;
   }
 
-.webGl {
-    z-index: 5;
-}
 
-.working {
-    z-index: 3;
-    
-
-    font-size: 100px;
-    background-color: aliceblue;
-}  
 
 
 .dashed-box { 
@@ -71,13 +61,16 @@ body {
     padding: auto;
     width: 100px;
     height: 100px;
-    background: linear-gradient(to right, #ff9068, #ff4b1f);
+    /* background: linear-gradient(to right, #ff9068, #ff4b1f); */
+    background-color: #E1F8DC;
+    border-radius: 40px;
+    box-shadow: 0 19px 38px rgba(19, 18, 18, 0.3), 0 15px 12px rgba(31, 30, 30, 0.22);
   }
 
   .element1 p {
-    color: #fff;
+    color: #000;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -86,13 +79,16 @@ body {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: linear-gradient(to right, #0ce41ee1, #06580de1);
+    /* background: linear-gradient(to right, #0ce41ee1, #06580de1); */
+    background-color: #E1F8DC;
+    border-radius: 40px;
+    box-shadow: 0 19px 38px rgba(19, 18, 18, 0.3), 0 15px 12px rgba(31, 30, 30, 0.22);
   }
 
   .element2 p {
-    color: #fff;
+    color: #000;
     text-align: center;
-    font-size: 30px;
+    font-size: 40px;
     font-family: 'Montserrat', sans-serif;
   }
 
@@ -107,7 +103,7 @@ body {
       margin-left: 30px;
   }
   .card {
-    background: #fff;
+    background: #CAF1DE;
     border-radius: 2px;
     display: inline-block;
     height: 600px;
@@ -117,7 +113,7 @@ body {
   }
 
   .card1 {
-    background: #fff;
+    background: #CAF1DE;
     border-radius: 2px;
     display: inline-block;
     height: 600px;
@@ -126,12 +122,12 @@ body {
     width: 300px;
   }
   .card-5 {
-    box-shadow: 0 19px 38px rgba(255, 255, 255, 0.3), 0 15px 12px rgba(255, 255, 255, 0.22);
+    box-shadow: 0 19px 38px rgba(19, 18, 18, 0.3), 0 15px 12px rgba(31, 30, 30, 0.22);
   }
     
 
 
   #buttonD {
-      margin-top: 30%;
-      margin-left: 50%;
+      margin-top: 100px;
+      margin-left: 100px;
   }
