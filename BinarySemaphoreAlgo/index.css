@@ -1,0 +1,109 @@
+h3 {
+	position: absolute;
+}
+
+h1 {
+	position: absolute;
+	margin-top: -90px;
+}
+
+body {
+	position: relative;
+	margin-top: 150px;
+	margin-left: 300px;
+	background-color: #eeeeee;
+}
+
+#b1 {
+	position: absolute;
+	height: auto;
+	width: auto;
+	margin-top: 130px;
+	margin-left: 115px;
+}
+
+button {
+	background-color: transparent;
+	padding: 10px 22px;
+	text-align: center;
+	color: #373a40;
+	border: 2px solid #2ecc40;
+}
+
+#b2 {
+	position: absolute;
+	height: auto;
+	width: auto;
+	margin-top: 265px;
+	margin-left: 115px;
+}
+
+img {
+	position: absolute;
+	left: 210px;
+	top: 190px;
+	width: 77px;
+	transition-duration: 2s;
+}
+
+img#p0 {
+	width: 77px;
+	margin-top: -80px;
+}
+
+img#p1 {
+	width: 77px;
+	top: 240px;
+}
+
+#main {
+	margin-top: 50px;
+	margin-left: 200px;
+}
+
+#reg {
+	position: absolute;
+	margin-top: 450px;
+	margin-left: 10px;
+}
+
+#loc {
+	position: absolute;
+	margin-top: 450px;
+	margin-left: 180px;
+}
+
+#box1,
+#box2 {
+	position: absolute;
+	border-color: #373a40;
+	border-style: solid;
+	border-width: 5px;
+	height: 300px;
+	width: 100px;
+	margin-top: 50px;
+}
+
+#entry,
+#exit {
+	margin-top: 50px;
+	position: absolute;
+	border-color: #373a40;
+	border-style: solid;
+	border-width: 5px;
+	height: 300px;
+	width: 100px;
+}
+
+#entry {
+	margin-left: 170px;
+}
+
+#exit {
+	margin-left: 510px;
+}
+
+#box2 {
+	border-color: #2ecc40;
+	margin-left: 340px;
+}
