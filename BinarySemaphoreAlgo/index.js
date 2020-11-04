@@ -3,6 +3,7 @@ var size = 1;
 var i0 = 1;
 var i1 = 1;
 var margin_top = 135;
+var box_height = 300;
 
 const inRQ = 1;
 const inSQ = 2;
@@ -28,6 +29,12 @@ async function addProcesses() {
 	let buttonName = "b" + temp; // b2
 	processes.set(name, { value: 1 });
 	margin_top += 55;
+	if(temp>=5){
+		box_height +=50;
+	}
+	
+	final_box_height = `${box_height}px`;
+	
 	final_margin = ` ${margin_top}px`; 
 	button_style = `style = "position: absolute; height: auto; width: auto; margin-top: ${final_margin};  margin-left: 115px; " `;
 	 
@@ -39,8 +46,17 @@ async function addProcesses() {
 
 	image_style = `style = "width: 38px;
 	margin-top: ${final_margin};
-	margin-left: 215px; "`;
+	transition-duration: 2s; "`;
 	insertImg.innerHTML += `<img ${image_style} id=${name} src="img/p${size}.png" />`;
+
+	
+    document.getElementById('box1').style.height = final_box_height;
+	document.getElementById('box2').style.height = final_box_height;
+	document.getElementById('entry').style.height = final_box_height;
+	document.getElementById('exit').style.height = final_box_height;
+	
+	
+
 	
 }
 
@@ -79,7 +95,7 @@ async function moveToSemaphore(val) {
 	var cs = document.getElementById("box2");
 
 	const img = document.getElementById(val);
-	img.style.left = `${img.offsetLeft + 340}px`;
+	img.style.marginLeft = `${img.offsetLeft + 340}px`;
 
 	await sleep(1000);
 
@@ -93,7 +109,7 @@ async function moveright(val) {
 	var cs = document.getElementById("box2");
 
 	const img = document.getElementById(val);
-	img.style.left = `${img.offsetLeft + 170}px`;
+	img.style.marginLeft = `${img.offsetLeft + 170}px`;
 
 	await sleep(1000);
 

@@ -44,7 +44,7 @@ button {
 img {
 	position: absolute;
 	margin-top: 80px;
-	margin-left: 215px;
+	margin-left: 235px;
 	width: 77px;
 	transition-duration: 2s;
 }
@@ -57,7 +57,7 @@ img#p0 {
 img#p1 {
 	width: 38px;
 	margin-top: 135px;
-	margin-left: 215px;
+	
 	
 }
 
@@ -116,7 +116,7 @@ img#p1 {
 
 #sem {
 	margin-top: 100px;
-	margin-left: 500px;
+	margin-left: -100px;
 }
 
 #incre {
