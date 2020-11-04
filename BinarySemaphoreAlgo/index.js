@@ -2,6 +2,7 @@ var size = 1;
 
 var i0 = 1;
 var i1 = 1;
+var margin_top = 135;
 
 const inRQ = 1;
 const inSQ = 2;
@@ -23,16 +24,24 @@ processes.set("p1", { value: 1 });
 async function addProcesses() {
 	size++;
 	let temp = size.toString();
-	let name = "p" + temp; // p2
+	let name = "P" + temp; // p2
 	let buttonName = "b" + temp; // b2
 	processes.set(name, { value: 1 });
-	insertButton.innerHTML += `<button class="right" id=${buttonName} onclick="verify(${name})">${name}</button>`;
+	margin_top += 55;
+	final_margin = ` ${margin_top}px`; 
+	button_style = `style = "position: absolute; height: auto; width: auto; margin-top: ${final_margin};  margin-left: 115px; " `;
+	 
+	
+	
+	
+	insertButton.innerHTML += `<button ${button_style} class="right" id=${buttonName} onclick="verify(${name})">${name}</button>`;
 	// button pos variable
-	insertImg.innerHTML += `<img id=${name} src="img/p${size}.png" />`;
-	document.getElementById(name).style = `img#${name} {
-	                    width: 38px;
-	                    margin-top: -80px;
-                    }`;
+
+	image_style = `style = "width: 38px;
+	margin-top: ${final_margin};
+	margin-left: 215px; "`;
+	insertImg.innerHTML += `<img ${image_style} id=${name} src="img/p${size}.png" />`;
+	
 }
 
 async function verify(val) {

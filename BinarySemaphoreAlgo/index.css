@@ -14,11 +14,14 @@ body {
 	background-color: #eeeeee;
 }
 
+
+
+
 #b0 {
 	position: absolute;
 	height: auto;
 	width: auto;
-	margin-top: 130px;
+	margin-top: 80px;
 	margin-left: 115px;
 }
 
@@ -34,26 +37,28 @@ button {
 	position: absolute;
 	height: auto;
 	width: auto;
-	margin-top: 265px;
+	margin-top: 135px;
 	margin-left: 115px;
 }
 
 img {
 	position: absolute;
-	left: 210px;
-	top: 190px;
+	margin-top: 80px;
+	margin-left: 215px;
 	width: 77px;
 	transition-duration: 2s;
 }
 
 img#p0 {
 	width: 38px;
-	margin-top: -80px;
+	
 }
 
 img#p1 {
 	width: 38px;
-	top: 240px;
+	margin-top: 135px;
+	margin-left: 215px;
+	
 }
 
 #main {
@@ -72,6 +77,7 @@ img#p1 {
 	margin-top: 450px;
 	margin-left: 180px;
 }
+
 
 #box1,
 #box2 {
@@ -107,3 +113,30 @@ img#p1 {
 	border-color: #2ecc40;
 	margin-left: 340px;
 }
+
+#sem {
+	margin-top: 100px;
+	margin-left: 500px;
+}
+
+#incre {
+	margin-left: -150px;
+	margin-top: 300px;
+}
+
+.base-level {
+	position: relative;
+	z-index: 1;
+}
+.second-level {
+	margin-top: auto;
+	position: relative;
+	width: 100%;
+    z-index: 5;
+}
+
+.first-level {
+
+    z-index: 2;
+}
+

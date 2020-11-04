@@ -4,33 +4,53 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Binary Semaphore</title>
+		<link rel="stylesheet" href="index.css" />
 	</head>
 	<body>
-		<div id="insertImg">
-			<img id="p0" src="img/p0.png" />
-			<img id="p1" src="img/p1.png" />
-		</div>
-		<div id="insertButton">
-			<button class="right" id="b0" onclick="verify('p0')">P0</button>
-			<button class="right" id="b1" onclick="verify('p1')">P1</button>
-		</div>
-
-		<div id="main">
-			<h1 style="left: 350px">Binary Semaphore</h1>
-			<h3 style="left: 200px">Ready Queue</h3>
-			<h3 style="left: 370px">Suspended</h3>
-			<h3 style="left: 580px">CS</h3>
-			<h3 style="left: 715px">Completed</h3>
-			<div id="box1"></div>
-			<div id="entry"></div>
-			<div id="box2"></div>
-			<div id="exit"></div>
-			<!-- <input type="text" id="sem" value="Register: N" readonly />
-			<input type="text" id="loc" value="Lock: 0" readonly /> -->
-		</div>
-		<button id="incre" onclick="addProcesses()">increment</button>
+		
+		<div class="base-level">
+			<div class="second-level">
+				<div id="insertButton" >
+	
+					<button class="right" id="b0" onclick="verify('p0')">P0</button>
+					<button class="right" id="b1" onclick="verify('p1')">P1</button>
+				</div>
+			</div>
+			<div class="first-level">
+				<div id="insertImg">
+					<img id="p0" src="img/p0.png" />
+					<img id="p1" src="img/p1.png" />
+				</div>
+			</div>
+			<div class="first-level">
+				<div id="main" >
+					<h1 style="left: 350px">Binary Semaphore</h1>
+					<h3 style="left: 200px">Ready Queue</h3>
+					<h3 style="left: 370px">Suspended</h3>
+					<h3 style="left: 580px">CS</h3>
+					<h3 style="left: 715px">Completed</h3>
+					<div id="box1"></div>
+					<div id="entry"></div>
+					<div id="box2"></div>
+					<div id="exit"></div>
+					<!-- <input type="text" id="sem" value="Register: N" readonly />
+					<input type="text" id="loc" value="Lock: 0" readonly /> -->
+				</div>
+			</div>
+			<div class="first-level">
+				<button id="incre" onclick="addProcesses()">increment</button>
 		<div id="sem"></div>
-		<link rel="stylesheet" href="index.css" />
+		
+			</div>
+		
+        
+		
+        
+		
+		
+		</div>
+		
+		
 		<script src="index.js"></script>
 	</body>
 </html>

@@ -17,6 +17,7 @@ body {
     height: 100%;
    
   }
+  
   .gold-box { 
     position: absolute;
     z-index: 2; /* put .gold-box above .green-box and .dashed-box */
@@ -33,6 +34,11 @@ body {
     width: 100%;  
     position: absolute;
     z-index: 5; 
+  }
+  .infoClass {
+    width: 100%;  
+    position: absolute;
+    z-index: 6; 
   }
 
   .labelClass p{
