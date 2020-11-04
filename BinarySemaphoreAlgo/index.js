@@ -1,7 +1,7 @@
 var size = 1;
 
-var i0 = 1;
-var i1 = 1;
+// var i0 = 1;
+// var i1 = 1;
 var margin_top = 135;
 var box_height = 300;
 
@@ -25,48 +25,45 @@ processes.set("p1", { value: 1 });
 async function addProcesses() {
 	size++;
 	let temp = size.toString();
-	let name = "P" + temp; // p2
+	let name = "p" + temp; // p2
+
 	let buttonName = "b" + temp; // b2
-	processes.set(name, { value: 1 });
+	processes.set(`${name}`, { value: 1 });
+	// console.log(processes.get(name).value);
 	margin_top += 55;
-	if(temp>=5){
-		box_height +=55;
+	if (temp >= 5) {
+		box_height += 55;
 	}
-	
+
 	final_box_height = `${box_height}px`;
-	
-	final_margin = ` ${margin_top}px`; 
+
+	final_margin = ` ${margin_top}px`;
 	button_style = `style = "position: absolute; height: auto; width: auto; margin-top: ${final_margin};  margin-left: 115px; " `;
-	 
-	
-	
-	
-	insertButton.innerHTML += `<button ${button_style} class="right" id=${buttonName} onclick="verify(${name})">${name}</button>`;
+
+	insertButton.innerHTML += `<button ${button_style} class="right" id=${buttonName} onclick='verify("${name}")'>${name}</button>`;
 	// button pos variable
 
 	image_style = `style = "width: 38px;
 	margin-top: ${final_margin};
 	transition-duration: 2s; "`;
-	insertImg.innerHTML += `<img ${image_style} id=${name} src="img/p${size}.png" />`;
+	insertImg.innerHTML += `<img ${image_style} id=${name} src="img/${name}.png" />`;
 
-	
-    document.getElementById('box1').style.height = final_box_height;
-	document.getElementById('box2').style.height = final_box_height;
-	document.getElementById('entry').style.height = final_box_height;
-	document.getElementById('exit').style.height = final_box_height;
-	
-	
-
-	
+	document.getElementById("box1").style.height = final_box_height;
+	document.getElementById("box2").style.height = final_box_height;
+	document.getElementById("entry").style.height = final_box_height;
+	document.getElementById("exit").style.height = final_box_height;
 }
 
 async function verify(val) {
+	console.log(typeof val);
+	if (val == "p2") console.log("p2");
 	if (processes.get(val).value == inRQ) {
 		if (semaphore == 1) {
 			semaphore = 0;
 			processes.get(val).value = 3;
-			console.log(val[1]);
+			// console.log(val[1]);
 			moveToSemaphore(val);
+			if (val == "p2") console.log("p2->semaphore");
 			semArea.innerHTML = semaphore;
 		} else {
 			moveright(val);
@@ -92,6 +89,7 @@ async function verify(val) {
 }
 
 async function moveToSemaphore(val) {
+	if (val == "p2") console.log("semaphore");
 	var cs = document.getElementById("box2");
 
 	const img = document.getElementById(val);
