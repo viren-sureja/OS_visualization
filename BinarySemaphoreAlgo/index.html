@@ -10,8 +10,8 @@
 		<div class="base-level">
 			<div class="second-level">
 				<div id="insertButton">
-					<button class="right" id="b0" onclick='verify("p0")'>P0</button>
-					<button class="right" id="b1" onclick='verify("p1")'>P1</button>
+					<button class="right" id="b0" onclick="verify('p0')">P0</button>
+					<button class="right" id="b1" onclick="verify('p1')">P1</button>
 				</div>
 			</div>
 			<div class="first-level">
@@ -37,9 +37,12 @@
 			</div>
 			<div class="first-level">
 				<button id="incre" onclick="addProcesses()">increment</button>
-				<div id="sem"></div>
+				<div id="divSema">Semaphore: <span id="sem"></span></div>
 			</div>
 		</div>
+		<div>Suspended Queue: <span id="printSuspendedQueue"></span></div>
+		<div>Critical Section: <span id="printCriticalSection"></span></div>
+		<div>Completed Queue: <span id="printCompletedQueue"></span></div>
 
 		<script src="index.js"></script>
 	</body>
