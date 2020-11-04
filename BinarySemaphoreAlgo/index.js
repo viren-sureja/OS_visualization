@@ -30,7 +30,7 @@ async function addProcesses() {
 	processes.set(name, { value: 1 });
 	margin_top += 55;
 	if(temp>=5){
-		box_height +=50;
+		box_height +=55;
 	}
 	
 	final_box_height = `${box_height}px`;
