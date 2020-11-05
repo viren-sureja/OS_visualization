@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
 h3 {
 	position: absolute;
 }
@@ -5,13 +9,22 @@ h3 {
 h1 {
 	position: absolute;
 	margin-top: -90px;
+	color: #0a2463;
 }
 
 body {
 	position: relative;
 	margin-top: 150px;
 	margin-left: 300px;
-	background-color: #eeeeee;
+	
+	
+	height: 1000px;
+	
+	background-size: cover;
+    background: linear-gradient(335deg, rgba(239,239,249,1) 38%, rgba(160,208,243,1) 83%, rgba(144,226,243,1) 100%);
+	font-family: 'Montserrat', sans-serif;
+	
+	
 }
 
 
