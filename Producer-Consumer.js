@@ -4,6 +4,9 @@ var process_limit_input = 5;
 var process_time_milliseconds = 90;
 var ProcessStack = []
 
+let randomness_factor = 0;
+
+
 function StackFormingQueue() {
 	for(var i=0;i<process_limit_input;i++) {
 		ProcessStack.push(i);
@@ -60,14 +63,16 @@ function ExecuteRandomProcess() {
 }
 
 function OptionToProcess() {
-  let process_type = Math.floor((Math.random() * 2) + 1);
+  let process_type = Math.floor((Math.random() * randomness_factor) + 1);
 
   // console.log(process_type);
 
   if (process_type == 1) {
+    randomness_factor = 3;
     Producer(GenerateRandomProcess());
   }
   else {
+    randomness_factor = 0;
     Consumer(ExecuteRandomProcess());
   }
 }
