@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-
 /* basic page styles */
 h3 {
 	position: absolute;
@@ -33,8 +32,8 @@ body {
 .infoPanelHead {
 	font-weight: bold;
 	font-family: "Montserrat", sans-serif;
+	cursor: pointer;
 }
-
 
 /* button styles */
 
@@ -67,7 +66,6 @@ button {
 	text-align: center;
 	font-weight: bold;
 	letter-spacing: 1px;
-	cursor: pointer;
 	box-shadow: inset 0 0 0 0 #136a6b;
 	-webkit-transition: ease-out 0.5s;
 	-moz-transition: ease-out 0.5s;
@@ -86,7 +84,6 @@ button {
 	margin-top: 135px;
 	margin-left: 115px;
 }
-
 
 /* image styles */
 img {
@@ -166,7 +163,6 @@ img#p1 {
 	
 } */
 
-
 /* After added styles for incremental button */
 #incre {
 	margin-left: -10px;
@@ -176,7 +172,6 @@ img#p1 {
 .infoPanel {
 	margin-left: -275px;
 }
-
 
 /* z index styles for divs --not important */
 .base-level {
@@ -194,7 +189,6 @@ img#p1 {
 	z-index: 2;
 }
 
-
 /* blinking box */
 @keyframes blink {
 	50% {
@@ -206,8 +200,6 @@ img#p1 {
 	animation: blink 1s;
 	animation-iteration-count: infinite;
 }
-
-
 
 /* Hover button animations */
 .pulse:hover,
@@ -221,7 +213,6 @@ img#p1 {
 		box-shadow: 0 0 0 0 var(--hover);
 	}
 }
-
 
 /* Hover button animations for increment button*/
 .addingProcess {
@@ -298,18 +289,16 @@ img#p1 {
 	opacity: 1;
 }
 
-
 /* Left tool tip */
 
 .LeftToolTip {
 	position: relative;
 	display: inline-block;
-	
-  }
-  
-  .LeftToolTip .Lefttooltiptext {
+}
+
+.LeftToolTip .Lefttooltiptext {
 	visibility: hidden;
-	width: 180px;
+	width: 400px;
 	background-color: black;
 	color: #fff;
 	text-align: center;
@@ -317,28 +306,20 @@ img#p1 {
 	padding: 5px 0;
 	position: absolute;
 	z-index: 1;
-	top: -5px;
-	left: 110%;
+	bottom: 100%;
+	/* top: -5px; */
+	left: 50%;
 	opacity: 0;
+	margin-left: -60px;
 	transition: opacity 1s;
-  }
-  
-  .LeftToolTip .Lefttooltiptext::after {
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: 100%;
-	margin-top: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: transparent black transparent transparent;
-  }
-  .LeftToolTip:hover .Lefttooltiptext {
+	cursor: pointer;
+}
+
+.LeftToolTip:hover .Lefttooltiptext {
+	cursor: pointer;
 	visibility: visible;
 	opacity: 1;
-  }
-
- 
+}
 
 /* for navbar styles */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200&display=swap");
@@ -354,7 +335,7 @@ a {
 	padding-bottom: 5px;
 	margin-top: -150px;
 	margin-left: -300px;
-	margin-right: -150px;
+	margin-right: -8.2px;
 	margin-bottom: 149px;
 }
 .nav:after {
@@ -363,7 +344,7 @@ a {
 	clear: right;
 }
 .container {
-	width: calc(100% - 200px);
+	/* width: calc(100% - 200px); */
 }
 .brand-logo {
 	color: #fff;
@@ -408,6 +389,7 @@ li:last-child {
 }
 .services {
 	cursor: pointer;
+	padding-right: 5px;
 }
 .services:hover .services-dropdown {
 	display: block;

@@ -48,7 +48,7 @@
 					</div>
 				</li>
 				<li>
-					<div class="services">
+					<div class="services" style="margin-right: 15px">
 						Semaphore <span class="fas fa-angle-down"></span>
 						<div class="services-dropdown">
 							<a href="#">Counting Semaphore</a>
@@ -57,22 +57,26 @@
 						</div>
 					</div>
 				</li>
-				<!-- <li><a class="hover" href="#" style="">about</a></li> -->
-				<!-- <li><a class="hover" href="#">contact us</a></li> -->
-				<!-- <li>
-					<input type="text" placeholder="Search" /><span
-						class="fas fa-search"
-					></span>
-				</li> -->
 			</ul>
 		</div>
 	</nav>
 	<body>
-
-		<h1 style="margin-top: -90px; left: 250px">Binary Semaphore</h1>
+		<h1 style="margin-top: -90px; left: 250px">
+			<a
+				style="
+					color: rgb(20, 77, 87);
+					margin-left: 50px;
+					font-size: 40px;
+					padding-bottom: 30px;
+					margin-top: 10px;
+				"
+				target="_blank"
+				href="https://www.geeksforgeeks.org/semaphores-in-process-synchronization/"
+				>Binary Semaphore</a
+			>
+		</h1>
 		<div class="base-level">
 			<div class="second-level">
-
 				<!-- Process buttons -->
 				<div id="insertButton">
 					<button
@@ -92,7 +96,6 @@
 				</div>
 			</div>
 			<div class="first-level">
-
 				<!-- Image Icons -->
 				<div id="insertImg">
 					<img id="p0" src="img/p0.png" />
@@ -100,11 +103,13 @@
 				</div>
 			</div>
 			<div class="first-level">
-				<div id="main">
-
+				<div id="main" style="cursor: pointer">
 					<!-- Box and Box headers with tooltips -->
 					<h3 class="tooltip" style="left: 220px">
-						Added<span class="tooltiptext">Tooltip text</span>
+						Added<span class="tooltiptext"
+							>This section is to add new process or to visualize as such like
+							the processes are coming for the shared variable.</span
+						>
 					</h3>
 					<h3 class="tooltip" style="left: 370px">
 						Suspended<span class="tooltiptext"
@@ -113,10 +118,16 @@
 						>
 					</h3>
 					<h3 class="tooltip" style="left: 580px">
-						CS<span class="tooltiptext">Tooltip text</span>
+						CS<span class="tooltiptext"
+							>The critical section is a code segment where the shared variables
+							can be accessed.</span
+						>
 					</h3>
 					<h3 class="tooltip" style="left: 715px">
-						Completed<span class="tooltiptext">Tooltip text</span>
+						Completed<span class="tooltiptext"
+							>This queue is to show the record of the completed
+							processes.</span
+						>
 					</h3>
 					<div id="box1"></div>
 					<div id="entry"></div>
@@ -127,13 +138,15 @@
 				</div>
 			</div>
 			<div class="infoPanel">
-
 				<!-- Log panel  -->
 				<div id="divSema" style="margin-bottom: 5px">
-
-
 					<span class="infoPanelHead LeftToolTip" id="semaphoreDanger"
-						>Semaphore :<span class="Lefttooltiptext">Tooltip text</span></span
+						>Semaphore :<span class="Lefttooltiptext"
+							>a semaphore is a variable or abstract data type used to control
+							access to a common resource by multiple processes in a concurrent
+							system such as a multitasking operating system. A semaphore is
+							simply a variable.</span
+						></span
 					>
 					<span style="margin-left: 60px" id="sem"></span>
 				</div>
@@ -141,35 +154,52 @@
 				<div style="margin-bottom: 5px">
 					<span class="infoPanelHead LeftToolTip"
 						>Suspended Queue:
-						<span class="Lefttooltiptext">Tooltip text</span></span
+						<span class="Lefttooltiptext"
+							>Here those processes would be queued which needed the Critical
+							Section but it was already occupied at the time of
+							appearance.</span
+						></span
 					>
 					<span style="margin-left: 7px" id="printSuspendedQueue"></span>
 				</div>
 				<div style="margin-bottom: 5px">
 					<span class="infoPanelHead LeftToolTip"
 						>Critical Section:
-						<span class="Lefttooltiptext">Tooltip text</span></span
+						<span class="Lefttooltiptext"
+							>It will show currently which process is being executed.</span
+						></span
 					>
 					<span style="margin-left: 36px" id="printCriticalSection"></span>
 				</div>
 				<div style="margin-bottom: 5px">
 					<span class="infoPanelHead LeftToolTip"
 						>Completed Queue:
-						<span class="Lefttooltiptext">Tooltip text</span></span
+						<span class="Lefttooltiptext"
+							>Here completed processes will be displayed.</span
+						></span
 					>
 					<span style="margin-left: 8px" id="printCompletedQueue"></span>
 				</div>
 			</div>
 
-
-            <!-- add process button -->
+			<!-- add process button -->
 			<div class="first-level">
 				<button id="incre" class="addingProcess" onclick="addProcesses()">
 					Add Process
 				</button>
 			</div>
 		</div>
-
+		<!-- <embed
+			src="C:/Users/i/Desktop/18BIT115_Viren_Sureja_ICT_business_proposal - Copy.pdf#toolbar=1"
+			width="500"
+			height="375"
+		/> -->
+		<!-- <embed
+			src="asset/demo.pdf#toolbar=1"
+			type="application/pdf"
+			width="500"
+			height="375"
+		/> -->
 		<script src="index.js"></script>
 	</body>
 </html>
