@@ -35,10 +35,21 @@
 			<div class="first-level">
 				<div id="main">
 					<h1 style="margin-top: -125px; left: 350px">Binary Semaphore</h1>
-					<h3 style="left: 220px">Added</h3>
-					<h3 style="left: 370px">Suspended</h3>
-					<h3 style="left: 580px">CS</h3>
-					<h3 style="left: 715px">Completed</h3>
+					<h3 class="tooltip" style="left: 220px">
+						Added<span class="tooltiptext">Tooltip text</span>
+					</h3>
+					<h3 class="tooltip" style="left: 370px">
+						Suspended<span class="tooltiptext"
+							>Processes queued here if Critical Section is already occupied by
+							some process to avoid access to shared Resources.</span
+						>
+					</h3>
+					<h3 class="tooltip" style="left: 580px">
+						CS<span class="tooltiptext">Tooltip text</span>
+					</h3>
+					<h3 class="tooltip" style="left: 715px">
+						Completed<span class="tooltiptext">Tooltip text</span>
+					</h3>
 					<div id="box1"></div>
 					<div id="entry"></div>
 					<div id="box2"></div>
@@ -48,22 +59,33 @@
 				</div>
 			</div>
 			<div class="infoPanel">
-				<div id="divSema">
-					<span class="infoPanelHead" id="semaphoreDanger">Semaphore :</span>
-					<span style="margin-left: 60px" id="sem"></span>
+				<div id="divSema" style="margin-bottom: 5px">
+					<span class="infoPanelHead tooltip" id="semaphoreDanger"
+						>Semaphore :<span class="tooltiptext">Tooltip text</span></span
+					>
+					<span style="margin-left: 164px" id="sem"></span>
 				</div>
 
-				<div>
-					<span class="infoPanelHead">Suspended Queue: </span>
-					<span style="margin-left: 8px" id="printSuspendedQueue"></span>
+				<div style="margin-bottom: 5px">
+					<span class="infoPanelHead tooltip"
+						>Suspended Queue:
+						<span class="tooltiptext">Tooltip text</span></span
+					>
+					<span style="margin-left: 164px" id="printSuspendedQueue"></span>
 				</div>
-				<div>
-					<span class="infoPanelHead">Critical Section: </span>
-					<span style="margin-left: 38px" id="printCriticalSection"></span>
+				<div style="margin-bottom: 5px">
+					<span class="infoPanelHead tooltip"
+						>Critical Section:
+						<span class="tooltiptext">Tooltip text</span></span
+					>
+					<span style="margin-left: 164px" id="printCriticalSection"></span>
 				</div>
-				<div>
-					<span class="infoPanelHead">Completed Queue: </span>
-					<span style="margin-left: 10px" id="printCompletedQueue"></span>
+				<div style="margin-bottom: 5px">
+					<span class="infoPanelHead tooltip"
+						>Completed Queue:
+						<span class="tooltiptext">Tooltip text</span></span
+					>
+					<span style="margin-left: 164px" id="printCompletedQueue"></span>
 				</div>
 			</div>
 
