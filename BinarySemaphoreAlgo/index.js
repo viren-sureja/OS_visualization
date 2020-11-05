@@ -48,7 +48,7 @@ class Queue {
 var suspendedQ = new Queue();
 
 var size = 1;
-var dummySize = -1;
+var currSize = -1;
 
 var margin_top = 135;
 var box_height = 300;
@@ -136,7 +136,8 @@ async function verify(val) {
 			semArea.innerHTML = semaphore;
 			suspendedQ.dequeue();
 		} else {
-			alert("wait for the process to complete!");
+			// alert("wait for the process to complete!");
+			popupForWarning();
 		}
 	} else if (processes.get(val).value == inCS) {
 		if (suspendedIsEmpty) {
@@ -145,6 +146,7 @@ async function verify(val) {
 			processes.get(val).value = 4;
 			printCriticalSection.innerHTML = "";
 			printCompletedQueue.innerHTML += `${val} `;
+			singleProcessComplete(val);
 		} else {
 			moveToComplete(val, suspendedfEle);
 			semaphore = 0;
@@ -153,12 +155,16 @@ async function verify(val) {
 			processes.get(suspendedfEle).value = 3;
 			printCriticalSection.innerHTML = suspendedfEle;
 			suspendedQ.dequeue();
+			singleProcessComplete(val);
 		}
+		currSize++;
 		semArea.innerHTML = semaphore;
 	} else if (processes.get(val).value == inCQ) {
-		alert(`process ${val} is already completed!`);
+		// alert(`process ${val} is already completed!`);
+		popupForCompleted(val);
 	}
 	printSuspendedQueue.innerHTML = suspendedQ.printQueue();
+	if (currSize == size) allProcessAreComplete();
 }
 
 async function moveToComplete(completeVal, suspendedVal) {
@@ -207,6 +213,37 @@ async function moveright(val) {
 		blinkingBox.classList.remove("alerts-border");
 		blinkingBox.style.borderColor = "#2ecc40";
 	}
+}
+
+function popupForWarning() {
+	swal({
+		title: "Warning",
+		text: "Critical section is being used by process!",
+		button: "Ok!",
+	});
+}
+function popupForCompleted(val) {
+	swal({
+		title: "Warning",
+		text: `Process ${val} is already completed!`,
+		button: "Ok!",
+	});
+}
+function singleProcessComplete(val) {
+	swal({
+		title: "Hola!",
+		text: `Process ${val} is completed!`,
+		icon: "success",
+		button: "Nice!",
+	});
+}
+function allProcessAreComplete() {
+	swal({
+		title: "We Are Done!",
+		text: "All the process are complete",
+		icon: "success",
+		button: "Aww yiss!",
+	});
 }
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
