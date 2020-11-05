@@ -52,6 +52,7 @@ var dummySize = -1;
 
 var margin_top = 135;
 var box_height = 300;
+var incre_height = 116;
 
 const inRQ = 1;
 const inSQ = 2;
@@ -59,6 +60,7 @@ const inCS = 3;
 const inCQ = 4;
 var semaphore = 1;
 var semArea = document.getElementById("sem");
+var blinkingBox = document.getElementById("box2");
 semArea.innerHTML = 1;
 
 var insertImg = document.getElementById("insertImg");
@@ -81,19 +83,20 @@ async function addProcesses() {
 	let buttonName = "b" + temp; // b2
 
 	processes.set(`${name}`, { value: 1 });
-
+    incre_height +=55;
 	margin_top += 55;
 	if (temp >= 5) {
 		box_height += 55;
+
 	}
 
 	final_box_height = `${box_height}px`;
-
+    final_incre_height = `${incre_height}px`;
 	final_margin = ` ${margin_top}px`;
 	button_style = `style = "position: absolute; height: auto; width: auto; margin-top: ${final_margin};  margin-left: 115px; " `;
-
+ 
 	insertButton.innerHTML += `<button ${button_style} class="right" id=${buttonName} onclick='verify("${name}")'>${name}</button>`;
-
+   
 	image_style = `style = "width: 38px;
 	margin-top: ${final_margin};
 	transition-duration: 2s; "`;
@@ -103,6 +106,8 @@ async function addProcesses() {
 	document.getElementById("box2").style.height = final_box_height;
 	document.getElementById("entry").style.height = final_box_height;
 	document.getElementById("exit").style.height = final_box_height;
+	document.getElementById("incre").style.marginTop = final_incre_height;
+	
 }
 
 async function verify(val) {
@@ -167,12 +172,21 @@ async function moveToComplete(completeVal, suspendedVal) {
 	const img2 = document.getElementById(suspendedVal);
 	img2.style.marginLeft = `${img2.offsetLeft + 170}px`;
 	await sleep(1000);
-
 	if (!semaphore) {
-		cs.style.borderColor = "#ff4136";
+		blinkingBox.style.borderColor = "#ff4136";
+		
+		blinkingBox.classList.add('alerts-border');
 	} else {
-		cs.style.borderColor = "#2ecc40";
+		blinkingBox.classList.remove('alerts-border');
+		blinkingBox.style.borderColor = "#2ecc40";
+		
 	}
+
+	// if (!semaphore) {
+	// 	cs.style.borderColor = "#ff4136";
+	// } else {
+	// 	cs.style.borderColor = "#2ecc40";
+	// }
 }
 async function moveToCriticalSection(val) {
 	var cs = document.getElementById("box2");
@@ -183,9 +197,13 @@ async function moveToCriticalSection(val) {
 	await sleep(1000);
 
 	if (!semaphore) {
-		cs.style.borderColor = "#ff4136";
+		blinkingBox.style.borderColor = "#ff4136";
+		
+		blinkingBox.classList.add('alerts-border');
 	} else {
-		cs.style.borderColor = "#2ecc40";
+		blinkingBox.classList.remove('alerts-border');
+		blinkingBox.style.borderColor = "#2ecc40";
+		
 	}
 }
 async function moveright(val) {
@@ -195,12 +213,21 @@ async function moveright(val) {
 	img.style.marginLeft = `${img.offsetLeft + 170}px`;
 
 	await sleep(1000);
-
+	
 	if (!semaphore) {
-		cs.style.borderColor = "#ff4136";
+		blinkingBox.style.borderColor = "#ff4136";
+		
+		blinkingBox.classList.add('alerts-border');
 	} else {
-		cs.style.borderColor = "#2ecc40";
+		blinkingBox.classList.remove('alerts-border');
+		blinkingBox.style.borderColor = "#2ecc40";
+		
 	}
+	// if (!semaphore) {
+	// 	cs.style.borderColor = "#ff4136";
+	// } else {
+	// 	cs.style.borderColor = "#2ecc40";
+	// }
 }
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));

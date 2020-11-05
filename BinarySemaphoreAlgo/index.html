@@ -35,14 +35,23 @@
 					<input type="text" id="loc" value="Lock: 0" readonly /> -->
 				</div>
 			</div>
+			<div class="infoPanel">
+				<div id="divSema">
+					Semaphore :
+						<span style ="margin-left: 50px; " id="sem"></span></div>
+					
+					
+		<div>Suspended Queue: <span style ="margin-left: 10px;" id="printSuspendedQueue"></span></div>
+		<div>Critical Section: <span style ="margin-left: 25px; " id="printCriticalSection"></span></div>
+		<div>Completed Queue: <span style ="margin-left: 8px; " id="printCompletedQueue"></span></div>
+			</div>
+			
 			<div class="first-level">
 				<button id="incre" onclick="addProcesses()">increment</button>
-				<div id="divSema">Semaphore: <span id="sem"></span></div>
+				
 			</div>
 		</div>
-		<div>Suspended Queue: <span id="printSuspendedQueue"></span></div>
-		<div>Critical Section: <span id="printCriticalSection"></span></div>
-		<div>Completed Queue: <span id="printCompletedQueue"></span></div>
+		
 
 		<script src="index.js"></script>
 	</body>
