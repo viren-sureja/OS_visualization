@@ -170,7 +170,7 @@ async function moveToComplete(completeVal, suspendedVal) {
 	img2.style.marginLeft = `${img2.offsetLeft + 170}px`;
 	await sleep(1000);
 	if (!semaphore) {
-		blinkingBox.style.borderColor = "#ff4136";
+		blinkingBox.style.borderColor = "#ff0000";
 
 		blinkingBox.classList.add("alerts-border");
 	} else {
@@ -185,7 +185,7 @@ async function moveToCriticalSection(val) {
 	await sleep(1000);
 
 	if (!semaphore) {
-		blinkingBox.style.borderColor = "#ff4136";
+		blinkingBox.style.borderColor = "#ff0000";
 
 		blinkingBox.classList.add("alerts-border");
 	} else {
@@ -200,7 +200,7 @@ async function moveright(val) {
 	await sleep(1000);
 
 	if (!semaphore) {
-		blinkingBox.style.borderColor = "#ff4136";
+		blinkingBox.style.borderColor = "#ff0000";
 
 		blinkingBox.classList.add("alerts-border");
 	} else {

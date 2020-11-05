@@ -223,6 +223,7 @@ img#p1 {
 	transition: 0.5s;
 	border: 2px solid #1e6774;
 	border-radius: 5px;
+	outline: none;
 }
 .addingProcess:hover {
 	background: #20404e;
