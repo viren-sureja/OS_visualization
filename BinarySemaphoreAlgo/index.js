@@ -83,20 +83,19 @@ async function addProcesses() {
 	let buttonName = "b" + temp; // b2
 
 	processes.set(`${name}`, { value: 1 });
-    incre_height +=55;
+	incre_height += 55;
 	margin_top += 55;
 	if (temp >= 5) {
 		box_height += 55;
-
 	}
 
 	final_box_height = `${box_height}px`;
-    final_incre_height = `${incre_height}px`;
+	final_incre_height = `${incre_height}px`;
 	final_margin = ` ${margin_top}px`;
 	button_style = `style = "position: absolute; height: auto; width: auto; margin-top: ${final_margin};  margin-left: 115px; " `;
- 
-	insertButton.innerHTML += `<button ${button_style} class="right" id=${buttonName} onclick='verify("${name}")'>${name}</button>`;
-   
+
+	insertButton.innerHTML += `<button ${button_style} class="right button_slide slide_right" id=${buttonName} onclick='verify("${name}")'>${name}</button>`;
+
 	image_style = `style = "width: 38px;
 	margin-top: ${final_margin};
 	transition-duration: 2s; "`;
@@ -107,7 +106,6 @@ async function addProcesses() {
 	document.getElementById("entry").style.height = final_box_height;
 	document.getElementById("exit").style.height = final_box_height;
 	document.getElementById("incre").style.marginTop = final_incre_height;
-	
 }
 
 async function verify(val) {
@@ -119,6 +117,7 @@ async function verify(val) {
 	if (processes.get(val).value == inRQ) {
 		if (semaphore == 1) {
 			semaphore = 0;
+
 			processes.get(val).value = 3;
 			moveToCriticalSection(val);
 			printCriticalSection.innerHTML = val;
@@ -163,8 +162,6 @@ async function verify(val) {
 }
 
 async function moveToComplete(completeVal, suspendedVal) {
-	var cs = document.getElementById("box2");
-
 	const img1 = document.getElementById(completeVal);
 	img1.style.marginLeft = `${img1.offsetLeft + 170}px`;
 	await sleep(1000);
@@ -174,23 +171,14 @@ async function moveToComplete(completeVal, suspendedVal) {
 	await sleep(1000);
 	if (!semaphore) {
 		blinkingBox.style.borderColor = "#ff4136";
-		
-		blinkingBox.classList.add('alerts-border');
-	} else {
-		blinkingBox.classList.remove('alerts-border');
-		blinkingBox.style.borderColor = "#2ecc40";
-		
-	}
 
-	// if (!semaphore) {
-	// 	cs.style.borderColor = "#ff4136";
-	// } else {
-	// 	cs.style.borderColor = "#2ecc40";
-	// }
+		blinkingBox.classList.add("alerts-border");
+	} else {
+		blinkingBox.classList.remove("alerts-border");
+		blinkingBox.style.borderColor = "#2ecc40";
+	}
 }
 async function moveToCriticalSection(val) {
-	var cs = document.getElementById("box2");
-
 	const img = document.getElementById(val);
 	img.style.marginLeft = `${img.offsetLeft + 340}px`;
 
@@ -198,36 +186,27 @@ async function moveToCriticalSection(val) {
 
 	if (!semaphore) {
 		blinkingBox.style.borderColor = "#ff4136";
-		
-		blinkingBox.classList.add('alerts-border');
+
+		blinkingBox.classList.add("alerts-border");
 	} else {
-		blinkingBox.classList.remove('alerts-border');
+		blinkingBox.classList.remove("alerts-border");
 		blinkingBox.style.borderColor = "#2ecc40";
-		
 	}
 }
 async function moveright(val) {
-	var cs = document.getElementById("box2");
-
 	const img = document.getElementById(val);
 	img.style.marginLeft = `${img.offsetLeft + 170}px`;
 
 	await sleep(1000);
-	
+
 	if (!semaphore) {
 		blinkingBox.style.borderColor = "#ff4136";
-		
-		blinkingBox.classList.add('alerts-border');
+
+		blinkingBox.classList.add("alerts-border");
 	} else {
-		blinkingBox.classList.remove('alerts-border');
+		blinkingBox.classList.remove("alerts-border");
 		blinkingBox.style.borderColor = "#2ecc40";
-		
 	}
-	// if (!semaphore) {
-	// 	cs.style.borderColor = "#ff4136";
-	// } else {
-	// 	cs.style.borderColor = "#2ecc40";
-	// }
 }
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));

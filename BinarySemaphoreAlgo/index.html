@@ -10,8 +10,20 @@
 		<div class="base-level">
 			<div class="second-level">
 				<div id="insertButton">
-					<button class="right" id="b0" onclick="verify('p0')">P0</button>
-					<button class="right" id="b1" onclick="verify('p1')">P1</button>
+					<button
+						class="right button_slide slide_right"
+						id="b0"
+						onclick="verify('p0')"
+					>
+						P0
+					</button>
+					<button
+						class="right button_slide slide_right"
+						id="b1"
+						onclick="verify('p1')"
+					>
+						P1
+					</button>
 				</div>
 			</div>
 			<div class="first-level">
@@ -22,8 +34,8 @@
 			</div>
 			<div class="first-level">
 				<div id="main">
-					<h1 style="margin-top: -125px ; left: 350px">Binary Semaphore</h1>
-					<h3 style="left: 200px">Ready Queue</h3>
+					<h1 style="margin-top: -125px; left: 350px">Binary Semaphore</h1>
+					<h3 style="left: 220px">Added</h3>
 					<h3 style="left: 370px">Suspended</h3>
 					<h3 style="left: 580px">CS</h3>
 					<h3 style="left: 715px">Completed</h3>
@@ -37,21 +49,30 @@
 			</div>
 			<div class="infoPanel">
 				<div id="divSema">
-					Semaphore :
-						<span style ="margin-left: 60px; " id="sem"></span></div>
-					
-					
-		<div>Suspended Queue: <span style ="margin-left: 8px;" id="printSuspendedQueue"></span></div>
-		<div>Critical Section: <span style ="margin-left: 38px; " id="printCriticalSection"></span></div>
-		<div>Completed Queue: <span style ="margin-left: 10px; " id="printCompletedQueue"></span></div>
+					<span class="infoPanelHead" id="semaphoreDanger">Semaphore :</span>
+					<span style="margin-left: 60px" id="sem"></span>
+				</div>
+
+				<div>
+					<span class="infoPanelHead">Suspended Queue: </span>
+					<span style="margin-left: 8px" id="printSuspendedQueue"></span>
+				</div>
+				<div>
+					<span class="infoPanelHead">Critical Section: </span>
+					<span style="margin-left: 38px" id="printCriticalSection"></span>
+				</div>
+				<div>
+					<span class="infoPanelHead">Completed Queue: </span>
+					<span style="margin-left: 10px" id="printCompletedQueue"></span>
+				</div>
 			</div>
-			
+
 			<div class="first-level">
-				<button id="incre" onclick="addProcesses()">increment</button>
-				
+				<button id="incre" class="addingProcess" onclick="addProcesses()">
+					Add Process
+				</button>
 			</div>
 		</div>
-		
 
 		<script src="index.js"></script>
 	</body>
