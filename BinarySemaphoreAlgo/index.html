@@ -18,6 +18,8 @@
 		></script>
 		<meta name="viewport" content="width=device-width, intial-scale=1.0" />
 	</head>
+
+	<!-- Navbar class starts here -->
 	<nav class="nav">
 		<div class="container">
 			<a class="brand-logo" href="">Home</a>
@@ -27,7 +29,27 @@
 				<!-- <li><a class="hover" href="#">home</a></li> -->
 				<li>
 					<div class="services">
-						Algorithms <span class="fas fa-angle-down"></span>
+						Concurrency <span class="fas fa-angle-down"></span>
+						<div class="services-dropdown">
+							<a href="#">Counting Semaphore</a>
+							<a href="#">Lock Variable</a>
+							<a href="#">Service-3</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="services">
+						Deadlock <span class="fas fa-angle-down"></span>
+						<div class="services-dropdown">
+							<a href="#">Counting Semaphore</a>
+							<a href="#">Lock Variable</a>
+							<a href="#">Service-3</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="services">
+						Semaphore <span class="fas fa-angle-down"></span>
 						<div class="services-dropdown">
 							<a href="#">Counting Semaphore</a>
 							<a href="#">Lock Variable</a>
@@ -46,9 +68,12 @@
 		</div>
 	</nav>
 	<body>
+
 		<h1 style="margin-top: -90px; left: 250px">Binary Semaphore</h1>
 		<div class="base-level">
 			<div class="second-level">
+
+				<!-- Process buttons -->
 				<div id="insertButton">
 					<button
 						class="right button_slide slide_right"
@@ -67,6 +92,8 @@
 				</div>
 			</div>
 			<div class="first-level">
+
+				<!-- Image Icons -->
 				<div id="insertImg">
 					<img id="p0" src="img/p0.png" />
 					<img id="p1" src="img/p1.png" />
@@ -74,6 +101,8 @@
 			</div>
 			<div class="first-level">
 				<div id="main">
+
+					<!-- Box and Box headers with tooltips -->
 					<h3 class="tooltip" style="left: 220px">
 						Added<span class="tooltiptext">Tooltip text</span>
 					</h3>
@@ -98,36 +127,42 @@
 				</div>
 			</div>
 			<div class="infoPanel">
+
+				<!-- Log panel  -->
 				<div id="divSema" style="margin-bottom: 5px">
-					<span class="infoPanelHead tooltip" id="semaphoreDanger"
-						>Semaphore :<span class="tooltiptext">Tooltip text</span></span
+
+
+					<span class="infoPanelHead LeftToolTip" id="semaphoreDanger"
+						>Semaphore :<span class="Lefttooltiptext">Tooltip text</span></span
 					>
 					<span style="margin-left: 164px" id="sem"></span>
 				</div>
 
 				<div style="margin-bottom: 5px">
-					<span class="infoPanelHead tooltip"
+					<span class="infoPanelHead LeftToolTip"
 						>Suspended Queue:
-						<span class="tooltiptext">Tooltip text</span></span
+						<span class="Lefttooltiptext">Tooltip text</span></span
 					>
 					<span style="margin-left: 164px" id="printSuspendedQueue"></span>
 				</div>
 				<div style="margin-bottom: 5px">
-					<span class="infoPanelHead tooltip"
+					<span class="infoPanelHead LeftToolTip"
 						>Critical Section:
-						<span class="tooltiptext">Tooltip text</span></span
+						<span class="Lefttooltiptext">Tooltip text</span></span
 					>
 					<span style="margin-left: 164px" id="printCriticalSection"></span>
 				</div>
 				<div style="margin-bottom: 5px">
-					<span class="infoPanelHead tooltip"
+					<span class="infoPanelHead LeftToolTip"
 						>Completed Queue:
-						<span class="tooltiptext">Tooltip text</span></span
+						<span class="Lefttooltiptext">Tooltip text</span></span
 					>
 					<span style="margin-left: 164px" id="printCompletedQueue"></span>
 				</div>
 			</div>
 
+
+            <!-- add process button -->
 			<div class="first-level">
 				<button id="incre" class="addingProcess" onclick="addProcesses()">
 					Add Process
