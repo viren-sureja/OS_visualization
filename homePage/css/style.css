@@ -14,6 +14,12 @@ body {
 	font-family: "Open Sans", Sans Sarif;
 	color: #787878;
 	-webkit-font-smoothing: antialiased;
+	background: linear-gradient(
+        335deg,
+        rgba(239, 239, 249, 1) 38%,
+        rgba(160, 208, 243, 1) 83%,
+        rgba(144, 226, 243, 1) 100%
+    );
 }
 
 h1,
@@ -289,7 +295,7 @@ footer .nav-link {
 
 .dropbtn {
 	margin-top: 200px;
-	background-color: lightblue;
+	background-color: #9ad3bc;
 	color: darkblue;
 	padding: 16px;
 	font-size: 16px;
@@ -341,10 +347,10 @@ a {
 	padding: 15px 0;
 	padding-top: 7px;
 	padding-bottom: 5px;
-	margin-top: -150px;
+	margin-top: 0px;
 	margin-left: -300px;
 	margin-right: -8.2px;
-	margin-bottom: 149px;
+	
 }
 .nav:after {
 	display: block;
@@ -380,6 +386,7 @@ input[type="checkbox"] {
 ul {
 	float: right;
 	font-size: 0;
+	margin-right: -290px;
 }
 li {
 	display: inline-block;
