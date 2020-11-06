@@ -3,66 +3,70 @@
  * Email 		: himanshucse2012@gmail.com
  * Website	:	http://www.indioweb.in/portfolio
  */
- 
+
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
 
 /*
  * Basic CSS starts 
  */
 
-body{
-	font-family: 'Open Sans', Sans Sarif;
+body {
+	font-family: "Open Sans", Sans Sarif;
 	color: #787878;
 	-webkit-font-smoothing: antialiased;
 }
 
-h1,h2,h3,h4,h5,h6{
-	font-family: 'Open Sans', Sans Sarif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: "Open Sans", Sans Sarif;
 	font-weight: 600;
-	
 }
 
-h1{
+h1 {
 	font-weight: 900;
 	size: 800px;
-	color:black;
-	margin-top:50px;
-	margin-left:400px;
+	color: black;
+	margin-top: 50px;
+	margin-left: 400px;
 }
-p{
-	margin:0;
-	padding:0;
+p {
+	margin: 0;
+	padding: 0;
 	line-height: 24px;
 	font-size: 14px;
-	color:orangered;
+	color: orangered;
 }
 
-a{
+a {
 	text-decoration: none;
 }
 
-a:hover{
+a:hover {
 	text-decoration: none;
 }
 
-a:hover,a:active,a:focus {
+a:hover,
+a:active,
+a:focus {
 	outline: 0 !important;
 }
 
-
-
 :focus {
-	outline:none;
+	outline: none;
 }
 
 ::-moz-focus-inner {
-	border:0;
+	border: 0;
 }
 
-.color{
+.color {
 	background: #32c8de;
 }
-.color-hover{
+.color-hover {
 	background: #2bbdd2;
 }
 
@@ -72,7 +76,7 @@ a:hover,a:active,a:focus {
 
 .banner {
 	border-top: 8px solid #32c8de;
-	background: #fff url('../img/Vector\ art.jpg') center;
+	background: #fff url("../img/Vector\ art.jpg") center;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: fill;
@@ -83,7 +87,7 @@ a:hover,a:active,a:focus {
 }
 
 .banner .banner-content {
-	padding: 150px 0; 
+	padding: 150px 0;
 }
 
 .banner .banner-content p {
@@ -102,7 +106,7 @@ a:hover,a:active,a:focus {
 .feature {
 	padding-top: 60px;
 	padding-bottom: 100px;
-	margin-top:-200px;
+	margin-top: -200px;
 }
 
 .feature .feature-item {
@@ -145,17 +149,17 @@ a:hover,a:active,a:focus {
 	line-height: 25px;
 	letter-spacing: 0.035em;
 }
-.Deadlock{
-	width:88px;
-	height:88px;
+.Deadlock {
+	width: 88px;
+	height: 88px;
 }
-.Concurrency{
-	width:88px;
-	height:88px;
+.Concurrency {
+	width: 88px;
+	height: 88px;
 }
-.Semaphore{
-	width:88px;
-	height:88px;
+.Semaphore {
+	width: 88px;
+	height: 88px;
 }
 .subscribe {
 	padding: 100px 0;
@@ -172,20 +176,22 @@ a:hover,a:active,a:focus {
 	letter-spacing: 0.025em;
 }
 
-.subscribe .sub-message form {margin-top: 20px;}
+.subscribe .sub-message form {
+	margin-top: 20px;
+}
 .subscribe .sub-message form .form-control {
 	box-shadow: none;
 	border-top-left-radius: 3px;
 	border-bottom-left-radius: 3px;
-} 
+}
 .subscribe .sub-message form .btn {
 	border-top-right-radius: 3px;
 	border-bottom-right-radius: 3px;
-} 
+}
 .subscribe .embed-responsive {
 	background: #fff;
- }
- 
+}
+
 .footer-above {
 	padding: 100px 0;
 	text-align: center;
@@ -220,7 +226,9 @@ a:hover,a:active,a:focus {
 	-o-transition: background 1s linear;
 	transition: background 1s linear;
 }
-.footer-above .social a:hover {background: #32c8de;}
+.footer-above .social a:hover {
+	background: #32c8de;
+}
 
 footer {
 	padding: 50px 0;
@@ -232,7 +240,7 @@ footer .nav-link {
 	margin-bottom: 10px;
 	color: #999;
 }
- 
+
 /*
  * Responsive CSS 
  */
@@ -240,85 +248,88 @@ footer .nav-link {
 /*
  * Mobile phones 
  */
-@media (max-width: 480px){
-
+@media (max-width: 480px) {
 }
 
 /*
  * Tablets 
  */
-@media (max-width: 767px){
-	.banner .banner-content { text-align: center;}
+@media (max-width: 767px) {
+	.banner .banner-content {
+		text-align: center;
+	}
 	.banner .banner-content img {
 		max-width: 180px;
 		margin: 0 auto;
 	}
-	
+
 	.subscribe .sub-content {
 		max-width: 360px;
 		margin: 0 auto;
 	}
-	.subscribe .sub-message form {margin-bottom: 25px;}
-}	
+	.subscribe .sub-message form {
+		margin-bottom: 25px;
+	}
+}
 
 /*
  * Desktop 
  */
-@media (max-width: 991px){
-
+@media (max-width: 991px) {
 }
-#Ti{
+#Ti {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	widows: 100%;
-	background: linear-gradient(
-                     rgba(20,20,20, .5), 
-					 rgba(20,20,20, .5));
+	background: linear-gradient(rgba(20, 20, 20, 0.5), rgba(20, 20, 20, 0.5));
 	width: 1548px;
-	height:400px
+	height: 400px;
 }
 
 .dropbtn {
-
 	margin-top: 200px;
-	background-color:lightblue;
+	background-color: lightblue;
 	color: darkblue;
 	padding: 16px;
 	font-size: 16px;
 	border: none;
-  
-  }
-  
-  .dropdown {
+}
+
+.dropdown {
 	position: relative;
 	display: inline-block;
-	width:88px;
-	height:92px;
-  }
-  
-  .dropdown-content {
+	width: 88px;
+	height: 92px;
+}
+
+.dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: #f1f1f1;
 	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  
-  }
-  
-  .dropdown-content a {
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
 	color: black;
 	padding: 12px 16px;
 	text-decoration: none;
 	display: block;
-  }
-  
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: coral;}
-  /* for navbar styles */
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.dropdown:hover .dropbtn {
+	background-color: coral;
+}
+/* for navbar styles */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200&display=swap");
 
 a {
