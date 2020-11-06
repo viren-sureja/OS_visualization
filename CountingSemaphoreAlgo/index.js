@@ -188,7 +188,7 @@ async function verify(val) {
 			} to ${semaphore}. \n\n`;
 		} else {
 			// alert("wait for the process to complete!");
-			text.innerHTML += `\t** Warning: wait for the process to complete! **\n`;
+			text.innerHTML += `\t** Warning: wait for the process or processes to complete! **\n`;
 
 			popupForWarning();
 		}
@@ -223,7 +223,8 @@ async function verify(val) {
 	printSuspendedQueue.innerHTML = suspendedQ.printQueue();
 	if (currSize == size) {
 		allProcessAreComplete();
-		text.innerHTML += `\n~~~~~~~ processes are completed. ~~~~~~~~\n`;
+		text.innerHTML += `\n<-- processes are completed. -->\n`;
+		text.innerHTML += `\n<- Thank you for using our visualization ->\n`;
 	}
 	document.getElementById("textArea").scrollTop = document.getElementById(
 		"textArea"
