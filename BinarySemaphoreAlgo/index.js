@@ -280,6 +280,6 @@ function sleep(ms) {
 async function getPdf(val) {
 	var allStatus = document.getElementById("textArea").value;
 	var doc = new jsPDF();
-	doc.text(allStatus, 10, 50);
+	doc.text(allStatus, 10, 10);
 	doc.save(`${val}.pdf`);
 }

@@ -322,10 +322,13 @@ img#p1 {
 	opacity: 1;
 }
 
-
+/* #pdf:hover {
+	color: white;
+	background-color: #134d4e;
+} */
 
 .pdfLogs {
-	margin-left: 675px
+	margin-left: 675px;
 }
 /* for navbar styles */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200&display=swap");
