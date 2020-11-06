@@ -72,7 +72,7 @@ var printCriticalSection = document.getElementById("printCriticalSection");
 var printCompletedQueue = document.getElementById("printCompletedQueue");
 var text = document.getElementById("textArea");
 // var hello = "";
-text.innerHTML += `\t<--- welcome to the binary semaphore algorithm --->\n\t\nsteps to follow the algorithm:\n\n`;
+text.innerHTML += `\t<--- welcome to the binary semaphore algorithm --->\n\t\nSteps of command initiated by you:\n\n`;
 
 // map for process;
 var processes = new Map();
@@ -268,9 +268,9 @@ function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-async function getPdf() {
+async function getPdf(val) {
 	var allStatus = document.getElementById("textArea").value;
 	var doc = new jsPDF();
 	doc.text(allStatus, 10, 10);
-	doc.save("output.pdf");
+	doc.save(`${val}.pdf`);
 }
