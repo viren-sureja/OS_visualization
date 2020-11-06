@@ -135,6 +135,10 @@
 					<div id="entry"></div>
 					<div id="box2"></div>
 					<div id="exit"></div>
+					<div class="pdfLogs" >
+						<textarea name="status" id="textArea" cols="40" rows="10"></textarea>
+						<button id="pdf" onclick="getPdf('binarySemaphore')">save PDF</button>
+					</div>
 					<!-- <input type="text" id="sem" value="Register: N" readonly />
 					<input type="text" id="loc" value="Lock: 0" readonly /> -->
 				</div>
@@ -191,10 +195,7 @@
 				</button>
 			</div>
 		</div>
-		<div style="margin-top: 100px; margin-left: 100px">
-			<textarea name="status" id="textArea" cols="30" rows="10"></textarea>
-			<button id="pdf" onclick="getPdf('binarySemaphore')">save PDF</button>
-		</div>
+		
 
 		<script src="index.js"></script>
 	</body>

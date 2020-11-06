@@ -52,7 +52,7 @@ var currSize = -1;
 
 var margin_top = 135;
 var box_height = 300;
-var incre_height = 116;
+var incre_height = 136;
 
 const inRQ = 1;
 const inSQ = 2;

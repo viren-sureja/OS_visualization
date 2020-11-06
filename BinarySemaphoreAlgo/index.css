@@ -166,11 +166,12 @@ img#p1 {
 /* After added styles for incremental button */
 #incre {
 	margin-left: -10px;
-	margin-top: 116px;
+	margin-top: 136px;
 }
 
 .infoPanel {
 	margin-left: -275px;
+	margin-top: -230px;
 }
 
 /* z index styles for divs --not important */
@@ -321,6 +322,11 @@ img#p1 {
 	opacity: 1;
 }
 
+
+
+.pdfLogs {
+	margin-left: 675px
+}
 /* for navbar styles */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200&display=swap");
 
