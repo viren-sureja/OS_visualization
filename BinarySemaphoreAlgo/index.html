@@ -113,8 +113,8 @@
 							the processes are coming for the shared variable.</span
 						>
 					</h3>
-					<h3 class="tooltip" style="left: 370px">
-						Suspended<span class="tooltiptext"
+					<h3 class="tooltip" style="left: 397px">
+						Entry<span class="tooltiptext"
 							>Processes queued here if Critical Section is already occupied by
 							some process to avoid access to shared Resources.</span
 						>
@@ -125,8 +125,8 @@
 							can be accessed.</span
 						>
 					</h3>
-					<h3 class="tooltip" style="left: 715px">
-						Completed<span class="tooltiptext"
+					<h3 class="tooltip" style="left: 745px">
+						Exit<span class="tooltiptext"
 							>This queue is to show the record of the completed
 							processes.</span
 						>
@@ -137,10 +137,11 @@
 					<div id="exit"></div>
 					<div class="pdfLogs" style="margin-left: 650px">
 						<textarea
+							style="font-size: 7px"
 							name="status"
 							id="textArea"
-							cols="35"
-							rows="10"
+							cols="65"
+							rows="18"
 						></textarea>
 						<button id="pdf" onclick="getPdf('binarySemaphore')">
 							save PDF

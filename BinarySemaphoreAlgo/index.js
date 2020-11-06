@@ -78,6 +78,8 @@ text.innerHTML += `\t<--- welcome to the binary semaphore algorithm --->\n\t\nSt
 var processes = new Map();
 processes.set("p0", { value: 1 });
 processes.set("p1", { value: 1 });
+text.innerHTML += `\t** process p0 is added and is ready to go to Entry Section. **\n\n`;
+text.innerHTML += `\t** process p1 is added and is ready to go to Entry Section. **\n\n`;
 
 async function addProcesses() {
 	size++;
@@ -111,7 +113,9 @@ async function addProcesses() {
 	document.getElementById("incre").style.marginTop = final_incre_height;
 
 	text.innerHTML += `\t** process ${name} is added and is ready to go to Entry Section. **\n\n`;
-	document.getElementById("textArea").scrollTop = document.getElementById("textArea").scrollHeight ;
+	document.getElementById("textArea").scrollTop = document.getElementById(
+		"textArea"
+	).scrollHeight;
 }
 
 async function verify(val) {
@@ -128,13 +132,13 @@ async function verify(val) {
 			moveToCriticalSection(val);
 			printCriticalSection.innerHTML = val;
 			semArea.innerHTML = semaphore;
-			text.innerHTML += `++ process ${val} is approved for critical section. ++\n`;
-			text.innerHTML += `-- semaphore value changed from 1 to 0. --\n\n`;
+			text.innerHTML += `++ process ${val} is approved for critical section. \n`;
+			text.innerHTML += `--  semaphore value changed from 1 to 0. \n\n`;
 		} else {
 			moveright(val);
 			processes.get(val).value = 2;
 			suspendedQ.enqueue(val);
-			text.innerHTML += `++ process ${val} is added to the suspended queue as critical section was occupied by some process. ++\n\n`;
+			text.innerHTML += `++ critical section is occupied so ${val} is added to suspended queue. \n\n`;
 		}
 	} else if (processes.get(val).value == inSQ) {
 		if (semaphore == 1) {
@@ -144,8 +148,8 @@ async function verify(val) {
 			semaphore = 0;
 			semArea.innerHTML = semaphore;
 			suspendedQ.dequeue();
-			text.innerHTML += `++ process ${val} is approved for Critical Section. ++\n`;
-			text.innerHTML += `-- semaphore value changed from 1 to 0. --\n\n`;
+			text.innerHTML += `++ process ${val} is approved for Critical Section. \n`;
+			text.innerHTML += `--  semaphore value changed from 1 to 0. \n\n`;
 		} else {
 			// alert("wait for the process to complete!");
 			text.innerHTML += `\t** Warning: wait for the process to complete! **\n`;
@@ -160,7 +164,7 @@ async function verify(val) {
 			printCriticalSection.innerHTML = "";
 			printCompletedQueue.innerHTML += `${val} `;
 			singleProcessComplete(val);
-			text.innerHTML += `\t.. process ${val} is completed. ..\n\n`;
+			text.innerHTML += `\t.. process ${val} is completed. \n\n`;
 		} else {
 			moveToComplete(val, suspendedfEle);
 			semaphore = 0;
@@ -170,8 +174,8 @@ async function verify(val) {
 			printCriticalSection.innerHTML = suspendedfEle;
 			suspendedQ.dequeue();
 			singleProcessComplete(val);
-			text.innerHTML += `\t.. process ${val} is completed. ..\n`;
-			text.innerHTML += `++ process ${suspendedfEle} is approved for critical section. ++\n\n`;
+			text.innerHTML += `\t.. process ${val} is completed. \n`;
+			text.innerHTML += `++ process ${suspendedfEle} is approved for critical section. \n\n`;
 		}
 		currSize++;
 		semArea.innerHTML = semaphore;
@@ -183,9 +187,12 @@ async function verify(val) {
 	printSuspendedQueue.innerHTML = suspendedQ.printQueue();
 	if (currSize == size) {
 		allProcessAreComplete();
-		text.innerHTML += `\n~~~~~~~ processes are completed. ~~~~~~~~\n`;
+		text.innerHTML += `\n<-- processes are completed. -->\n`;
+		text.innerHTML += `\n<- Thank you for using our visualization ->\n`;
 	}
-	document.getElementById("textArea").scrollTop = document.getElementById("textArea").scrollHeight ;
+	document.getElementById("textArea").scrollTop = document.getElementById(
+		"textArea"
+	).scrollHeight;
 }
 
 async function moveToComplete(completeVal, suspendedVal) {
