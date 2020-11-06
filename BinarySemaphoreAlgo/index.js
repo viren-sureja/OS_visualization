@@ -111,6 +111,7 @@ async function addProcesses() {
 	document.getElementById("incre").style.marginTop = final_incre_height;
 
 	text.innerHTML += `\t** process ${name} is added and is ready to go to Entry Section. **\n\n`;
+	document.getElementById("textArea").scrollTop = document.getElementById("textArea").scrollHeight ;
 }
 
 async function verify(val) {
@@ -184,6 +185,7 @@ async function verify(val) {
 		allProcessAreComplete();
 		text.innerHTML += `\n~~~~~~~ processes are completed. ~~~~~~~~\n`;
 	}
+	document.getElementById("textArea").scrollTop = document.getElementById("textArea").scrollHeight ;
 }
 
 async function moveToComplete(completeVal, suspendedVal) {
@@ -271,6 +273,6 @@ function sleep(ms) {
 async function getPdf(val) {
 	var allStatus = document.getElementById("textArea").value;
 	var doc = new jsPDF();
-	doc.text(allStatus, 10, 10);
+	doc.text(allStatus, 10, 50);
 	doc.save(`${val}.pdf`);
 }
