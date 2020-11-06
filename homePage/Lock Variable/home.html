@@ -47,10 +47,14 @@ https://templatemo.com/tm-531-reflux
               </div>
               <div class="col-md-6">
                 <div class="right-text">
-                  <h4>Buttons overview</h4>
+                  <h4>Buttons info</h4>
                   <p>
-                    As you can see from the screenshot, there are two buttons P0 and P1 which represents process P0 and P1. When you press P0 the process P0 will move and if you press P1, then process P1 will move.
-                    
+                    Home       : In navbar home button is to jump to main page <br>
+                    Dropdown   : To jump to any algorithm <br>
+                    Info panel : Displays the value of each required queue and semaphore. <br/>
+                    Add Process: On clicking this button new process will be added. <br/>
+                    P0         : On clicking this button P0 process will move forward according to algorithm. <br/>
+                    save PDF   : To save all the status of each stage of algorithm . <br> 
                   </p>
                 </div>
               </div>
@@ -60,12 +64,11 @@ https://templatemo.com/tm-531-reflux
             <div class="row">
               <div class="col-md-6">
                 <div class="left-text">
-                  <h4>Step 1</h4>
+                  <h4>Tool Tips</h4>
                   <p>
-                    Here, if you press P0, then process P0 go will from queue to the entry section.  When it enters the entry section, initially the value of the lock will be 0. When it enters into the critical section, a register will come into the picture. The value of the register will be 1.<br/>
-	                  Now in the entry section itself, the exchange of values between the register and the lock takes place. <br/>
-                    Hence, the value of lock will become 1 and the value of register will become 0.<br/>
-                  </p>
+                    Tooltips will help to get information about the hovered element. <br>
+                    here element with tooltips are:<br> Lock Variable, critical section, completed processes, </t>Added, Entry, CS, Exit
+                 </p>
                 </div>
               </div>
               <div class="col-md-6">
@@ -84,9 +87,9 @@ https://templatemo.com/tm-531-reflux
               </div>
               <div class="col-md-6">
                 <div class="right-text">
-                  <h4>Step 2</h4>
+                  <h4>To CS</h4>
                   <p>
-                    Here once again if you press P0, then process P0 will go from entry section to the critical section. In critical section, only one process can occur at a time.
+                    By clicking the button the process will be moved to Critical Section if the Critical section is not occupied or Lock is 0.
                   </p>
                 </div>
               </div>
@@ -96,12 +99,9 @@ https://templatemo.com/tm-531-reflux
             <div class="row">
               <div class="col-md-6">
                 <div class="left-text">
-                  <h4>Step 3</h4>
+                  <h4>Add Processes</h4>
                   <p>
-                    Now if you press P1, then P1 will move from the queue to the entry section. Now again if you press P1 again, then there will be a problem as only one process can enter into the critical section.<br/> 
-                  	Process P0 is already inside the critical section, so process P1 has to wait for P0 to finish the process. <br/>
-                  	As process P0 is already inside the critical section, the value of the register will become 1 and process P1 will go into the while loop and will never enter into the critical section. <br/>
-                  	The website will show an alert message that process P1 needs to wait for process P0 to leave the critical section.
+                    By clicking Add Processes new processes will be added with the button and process icon.
                   </p>
                 </div>
               </div>
@@ -121,11 +121,11 @@ https://templatemo.com/tm-531-reflux
               </div>
               <div class="col-md-6">
                 <div class="right-text">
-                  <h4>Step 4</h4>
+                  <h4>To Entry Section</h4>
                   <p>
-                    Now again when you press P0, then process P0 will go from critical section to the exit section. <br/>
-                    In exit section the value of lock as well the value of the register will become 0. Again in the same time if you press P1 then again the value of lock will become 1.
-                  </p>
+                    Processes will move to suspended queue if the critical section is occupied. <br>
+                    Example: p2 will be moved to suspended queue as critical section is occupied by p0.
+                 </p>
                 </div>
               </div>
             </div>
@@ -134,11 +134,9 @@ https://templatemo.com/tm-531-reflux
             <div class="row">
               <div class="col-md-6">
                 <div class="left-text">
-                  <h4>Step 5</h4>
+                  <h4>Warning</h4>
                   <p>
-                    Now in the similar way if process P1 is in the critical section and process P0 is in entry section, then again if you press P0 the process P0 cannot enter into the critical section.<br/>
-                    The value of the register will become 1 from zero and process P0 will enter into an infinite while loop refraining it from entering it into the critical section.<br/>
-                  	An alert message will come that process P0 needs to wait for process P1 to leave the critical section.
+                    If the process is there in critical section still if any process tries to interrupt then it will show the warning.
                   </p>
                 </div>
               </div>
@@ -158,11 +156,9 @@ https://templatemo.com/tm-531-reflux
               </div>
               <div class="col-md-6">
                 <div class="right-text">
-                  <h4>Step 6</h4>
+                  <h4>Full completion</h4>
                   <p>
-                    Now consider a condition when process P0 and P1 are initially in the queue. Now process P0 will enter into the entry section. So the value of lock will be 1 and register will be 0.<br/>
-                    Now at the same time, process P1 will come and it will enter into the entry section.<br/>
-                    Now the value of register will become 1 hence neither process P0 nor process P1 can enter into the critical section which will lead to Deadlock.<br/>
+                    It's gratitude message to display that all the processes are completed.
                   </p>
                 </div>
               </div>
@@ -172,9 +168,9 @@ https://templatemo.com/tm-531-reflux
             <div class="row">
               <div class="col-md-6">
                 <div class="left-text">
-                  <h4>Step 7</h4>
+                  <h4>Save PDF</h4>
                   <p>
-                    Now if any process goes from critical section to the exit section, then the value of lock and register will become 0, so that any other process can execute and utilize the critical section.
+                    By clicking the save PDF the pdf will be formed by collecting all the text in textArea.
                   </p>
                 </div>
               </div>
