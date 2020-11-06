@@ -70,6 +70,9 @@ var insertButton = document.getElementById("insertButton");
 var printSuspendedQueue = document.getElementById("printSuspendedQueue");
 var printCriticalSection = document.getElementById("printCriticalSection");
 var printCompletedQueue = document.getElementById("printCompletedQueue");
+var text = document.getElementById("textArea");
+// var hello = "";
+text.innerHTML += `\t<--- welcome to the binary semaphore algorithm --->\n\t\nsteps to follow the algorithm:\n\n`;
 
 // map for process;
 var processes = new Map();
@@ -106,6 +109,8 @@ async function addProcesses() {
 	document.getElementById("entry").style.height = final_box_height;
 	document.getElementById("exit").style.height = final_box_height;
 	document.getElementById("incre").style.marginTop = final_incre_height;
+
+	text.innerHTML += `\t** process ${name} is added and is ready to go to Entry Section. **\n\n`;
 }
 
 async function verify(val) {
@@ -122,10 +127,13 @@ async function verify(val) {
 			moveToCriticalSection(val);
 			printCriticalSection.innerHTML = val;
 			semArea.innerHTML = semaphore;
+			text.innerHTML += `++ process ${val} is approved for critical section. ++\n`;
+			text.innerHTML += `-- semaphore value changed from 1 to 0. --\n\n`;
 		} else {
 			moveright(val);
 			processes.get(val).value = 2;
 			suspendedQ.enqueue(val);
+			text.innerHTML += `++ process ${val} is added to the suspended queue as critical section was occupied by some process. ++\n\n`;
 		}
 	} else if (processes.get(val).value == inSQ) {
 		if (semaphore == 1) {
@@ -135,8 +143,12 @@ async function verify(val) {
 			semaphore = 0;
 			semArea.innerHTML = semaphore;
 			suspendedQ.dequeue();
+			text.innerHTML += `++ process ${val} is approved for Critical Section. ++\n`;
+			text.innerHTML += `-- semaphore value changed from 1 to 0. --\n\n`;
 		} else {
 			// alert("wait for the process to complete!");
+			text.innerHTML += `\t** Warning: wait for the process to complete! **\n`;
+
 			popupForWarning();
 		}
 	} else if (processes.get(val).value == inCS) {
@@ -147,6 +159,7 @@ async function verify(val) {
 			printCriticalSection.innerHTML = "";
 			printCompletedQueue.innerHTML += `${val} `;
 			singleProcessComplete(val);
+			text.innerHTML += `\t.. process ${val} is completed. ..\n\n`;
 		} else {
 			moveToComplete(val, suspendedfEle);
 			semaphore = 0;
@@ -156,15 +169,21 @@ async function verify(val) {
 			printCriticalSection.innerHTML = suspendedfEle;
 			suspendedQ.dequeue();
 			singleProcessComplete(val);
+			text.innerHTML += `\t.. process ${val} is completed. ..\n`;
+			text.innerHTML += `++ process ${suspendedfEle} is approved for critical section. ++\n\n`;
 		}
 		currSize++;
 		semArea.innerHTML = semaphore;
 	} else if (processes.get(val).value == inCQ) {
 		// alert(`process ${val} is already completed!`);
 		popupForCompleted(val);
+		text.innerHTML += `\t** Warning: process ${val} is already completed! **\n`;
 	}
 	printSuspendedQueue.innerHTML = suspendedQ.printQueue();
-	if (currSize == size) allProcessAreComplete();
+	if (currSize == size) {
+		allProcessAreComplete();
+		text.innerHTML += `\n~~~~~~~ processes are completed. ~~~~~~~~\n`;
+	}
 }
 
 async function moveToComplete(completeVal, suspendedVal) {
@@ -247,4 +266,11 @@ function allProcessAreComplete() {
 }
 function sleep(ms) {
 	return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function getPdf() {
+	var allStatus = document.getElementById("textArea").value;
+	var doc = new jsPDF();
+	doc.text(allStatus, 10, 10);
+	doc.save("output.pdf");
 }
