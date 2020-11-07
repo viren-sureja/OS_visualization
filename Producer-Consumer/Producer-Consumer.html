@@ -14,17 +14,21 @@
 <body>
 
     <h1>Producer Consumer Algorithm</h1>
+    <p>Black box cell means the respective process is produced</p>
+    <p>White box cell means the respective process is consumed</p>
 
         <label for="NoOfProcess">No. of Process:</label>
         <input type="text" id="NoOfProcess" name="NoOfProcess"><br><br>
         <label for="ExecutionTime">Time to execute this processes (in ms):</label>
         <input type="text" id="ExecutionTime" name="ExecutionTime"><br><br>
-        <button id="submitButton" onclick="AcceptInput()">submit</button>
+        <button id="submitButton" onclick="AcceptInput()">Visualize</button>
 
-    <div>
-        <section class="output">
 
-        </section>
+    <div class='PR'>
+
+    </div>
+    <div class="output" style="margin-left: 167px">
+        
     </div>
 
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
