@@ -1,7 +1,8 @@
 var $output = $(".output")
+var $props = $(".PR")
 
 var process_limit_input = 5;
-var process_time_milliseconds = 90;
+var process_time_milliseconds = 900;
 var ProcessStack = []
 
 let randomness_factor = 0;
@@ -9,7 +10,8 @@ let randomness_factor = 0;
 
 function StackFormingQueue() {
 	for(var i=0;i<process_limit_input;i++) {
-		ProcessStack.push(i);
+    ProcessStack.push(i);
+    $props.append("<section class='props' id='P" + i + "'>" + 'P' + i + "</section>");
 	}
 }
 
@@ -20,7 +22,9 @@ async function AcceptInput() {
 
   //*********Worker Thread**********//
   let iteration = 0;
+  $props.text("");
   StackFormingQueue();
+  $output.text("");
 
   while (iteration <= process_time_milliseconds) {
     OptionToProcess();
@@ -40,20 +44,24 @@ function sleep(ms) {
 //*****Algorithm Processes******//
 function Producer(process_no) {
   ProcessStack.push(process_no);
-  console.log('Process no.' + process_no + ' is produced.');
+  // console.log('Process no.' + process_no + ' is produced.');
   $output.append("<section>" + 'Process no.' + process_no + ' is produced.' + "</section>");
+  document.getElementById("P" + process_no).style.background = "black";
+  document.getElementById("P" + process_no).style.color = "white";
 }
 
 function Consumer(process_no) {
-  console.log('Process no.' + process_no + ' is consumed.');
+  // console.log('Process no.' + process_no + ' is consumed.');
   $output.append("<section>" + 'Process no.' + process_no + ' is consumed.' + "</section>");
+  document.getElementById("P" + process_no).style.background = "white";
+  document.getElementById("P" + process_no).style.color = "black";
 }
 //********************************//
 
 
 //***Random Function to generate process***//
 function GenerateRandomProcess() {
-  let random_process = Math.floor((Math.random() * process_limit_input) + 1);
+  let random_process = Math.floor((Math.random() * (process_limit_input)) + 0);
   return random_process;
 }
 
