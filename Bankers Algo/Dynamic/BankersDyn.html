@@ -3,6 +3,49 @@
 	<head>
 		<link rel="stylesheet" href="./css/BankersDyn.css" />
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+		
+	<!-- Navbar class starts here -->
+	<nav class="nav">
+		<div class="container">
+			<a class="brand-logo" href="">Home</a>
+			<input class="menu-toggle" type="checkbox" id="toggle" />
+			<label class="menu" for="toggle">menu</label>
+			<ul>
+				<!-- <li><a class="hover" href="#">home</a></li> -->
+				<li>
+					<div class="services">
+						Concurrency <span class="fas fa-angle-down"></span>
+						<div class="services-dropdown">
+							<a href="#">Counting Semaphore</a>
+							<a href="#">Lock Variable</a>
+							<a href="#">Service-3</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="services">
+						Deadlock <span class="fas fa-angle-down"></span>
+						<div class="services-dropdown">
+							<a href="#">Counting Semaphore</a>
+							<a href="#">Lock Variable</a>
+							<a href="#">Service-3</a>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="services" style="margin-right: 15px">
+						Semaphore <span class="fas fa-angle-down"></span>
+						<div class="services-dropdown">
+							<a href="#">Counting Semaphore</a>
+							<a href="#">Lock Variable</a>
+							<a href="#">Service-3</a>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
 	</head>
 
 	<body>
@@ -23,8 +66,8 @@
 					<th>C</th>
 				</tr>
 				<!-- <div id="AddDeleteRow"> -->
-				<tr id="p1">
-					<th>p1</th>
+				<tr id="p0">
+					<th>p0</th>
 					<td><input value="0" /></td>
 					<td><input value="1" /></td>
 					<td><input value="0" /></td>
@@ -39,9 +82,12 @@
 		</div>
 
 		<!-- <p class="lol">Computing process hahahhahahah</p> -->
-		<button onclick="addRow()">+</button>
-		<button onclick="removeRow()" style="margin-top: 45px">-</button>
-		<button onclick="submitValue()" style="margin-top: 45px">submit</button>
+		<div class="controlPanel" style="margin-top: 200px;">
+			<button onclick="addRow()">+</button>
+			<button onclick="removeRow()" style="margin-top: 45px">-</button>
+			<button onclick="submitValue()" style="margin-top: 45px">submit</button>
+		</div>
+		
 		<div id="info" style="margin-top: 45px"></div>
 
 		<script></script>

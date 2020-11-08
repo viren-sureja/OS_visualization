@@ -1,10 +1,14 @@
 // var remRow = document.getElementById("AddRow");
-var size = 1;
+var size = 0;
+var removeSize = size+1;
+
 
 function removeRow() {
-	if (size > 0) {
-		document.getElementById("myTable").deleteRow(size);
-		size--;
+	if (removeSize > 0) {
+		document.getElementById("myTable").deleteRow(removeSize);
+		removeSize--;
+		size = removeSize - 1;
+		
 	}
 }
 function addRow() {
@@ -14,37 +18,20 @@ function addRow() {
 	document.getElementById("myTable").innerHTML += `
                     <tr id=${name}>
 						<td>${name}</td>
-						<td><input value="" /></td>
-						<td><input value="" /></td>
-						<td><input value="" /></td>
-						<td><input value="" /></td>
-						<td><input value="" /></td>
-						<td><input value="" /></td>
+						<td><input value="2" /></td>
+						<td><input value="0" /></td>
+						<td><input value="0" /></td>
+						<td><input value="3" /></td>
+						<td><input value="2" /></td>
+						<td><input value="2" /></td>
 						<td><input value="" /></td>
 						<td><input value="" /></td>
 						<td><input value="" /></td>
 					</tr>`;
 }
-function showTableData() {
-	document.getElementById("info").innerHTML = "";
-	var myTab = document.getElementById("myTable").rows;
 
-	for (let i = 1; i < myTab.length; i++) {
-		let myrow = myTab[i];
-		for (let j = 1; j < myrow.cells.length - 3; j++) {
-			let mytd = myrow.cells[j];
-			let currValue = mytd.children[0].value;
-		}
-	}
-}
 
-/* 
-for (i = 1; i < myTab.rows.length; i++) {
-    for (var j = 0; j < 3; j++) {
-    
-    }
-}
-*/
+
 
 function submitValue() {
 	// $("section").remove();
@@ -77,7 +64,7 @@ function submitValue() {
 		max.push(tempList);
 	}
 
-	n = size;
+	n = size+1;
 	m = 3;
 	let f = [];
 	for (i = 0; i < n; i++) f[i] = 0;
