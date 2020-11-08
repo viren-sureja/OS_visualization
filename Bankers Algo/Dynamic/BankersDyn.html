@@ -1,125 +1,49 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<link rel="stylesheet" href="./css/BankersDyn.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	</head>
 
-<head>
-    <link rel="stylesheet" href="./css/BankersDyn.css">
-    <script src =  
-"https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">  
-    </script>  
+	<body>
+		<script src="./js/BankersDyn.js"></script>
 
+		<div style="margin-top: 3%" class="mainTable" style="margin: 10% 20%">
+			<table class="container" id="myTable" style="font-size: 0.8em">
+				<tr>
+					<th></th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+					<th>A</th>
+					<th>B</th>
+					<th>C</th>
+				</tr>
+				<!-- <div id="AddDeleteRow"> -->
+				<tr id="p1">
+					<th>p1</th>
+					<td><input value="0" /></td>
+					<td><input value="1" /></td>
+					<td><input value="0" /></td>
+					<td><input value="7" /></td>
+					<td><input value="5" /></td>
+					<td><input value="3" /></td>
+					<td><input value="3" /></td>
+					<td><input value="3" /></td>
+					<td><input value="2" /></td>
+				</tr>
+			</table>
+		</div>
 
+		<!-- <p class="lol">Computing process hahahhahahah</p> -->
+		<button onclick="addRow()">+</button>
+		<button onclick="removeRow()" style="margin-top: 45px">-</button>
+		<button onclick="submitValue()" style="margin-top: 45px">submit</button>
+		<div id="info" style="margin-top: 45px"></div>
 
-</head>
-
-<body>
-  
-    <script src="./js/BankersDyn.js"></script>
-
-   
-
-
-    <div style="margin-top: 3%" class="mainTable" style="margin: 10% 20%;">
-        <table class="container" id="myTable" style=" font-size: 0.8em;">
-            <tr>
-                <th></th>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-                <th>A</th>
-                <th>B</th>
-                <th>C</th>
-            </tr>
-      
-            <tr>
-                <th>P0</th>
-                <td><input class="Allocation11" value="3" /></td>
-                <td><input class="Allocation12" value="3" /></td>
-                <td><input class="Allocation13" value="3" /></td>
-                <td><input class="Max11" value="3" /></td>
-                <td><input class="Max12" value="3" /></td>
-                <td><input class="Max13" value="3" /></td>
-                <td><input class="Avail11" value="" /></td>
-                <td><input class="Avail12" value="" /></td>
-                <td><input class="Avail13" value="" /></td>
-            </tr>
-            <tr>
-                <th>P1</th>
-                <td><input class="Allocation21" value="3" /></td>
-                <td><input class="Allocation22" value="3" /></td>
-                <td><input class="Allocation23" value="3" /></td>
-                <td><input class="Max21" value="3" /></td>
-                <td><input class="Max22" value="3" /></td>
-                <td><input class="Max23" value="3" /></td>
-                <td><input class="Avail21" value="" /></td>
-                <td><input class="Avail22" value="" /></td>
-                <td><input class="Avail23" value="" /></td>
-                <!-- <td>1</td>
-                <td>1</td>
-                <td>1</td> -->
-            </tr>
-            <tr>
-                <th>P2</th>
-                <td><input class="Allocation31" value="3" /></td>
-                <td><input class="Allocation32" value="3" /></td>
-                <td><input class="Allocation33" value="3" /></td>
-                <td><input class="Max31" value="3" /></td>
-                <td><input class="Max32" value="3" /></td>
-                <td><input class="Max33" value="3" /></td>
-                <td><input class="Avail31" value="" /></td>
-                <td><input class="Avail32" value="" /></td>
-                <td><input class="Avail33" value="" /></td>
-                <!-- <td>1</td>
-                <td>1</td>
-                <td>1</td> -->
-            </tr>
-            <tr>
-                <th>P3</th>
-                <td><input class="Allocation41" value="3" /></td>
-                <td><input class="Allocation42" value="3" /></td>
-                <td><input class="Allocation43" value="3" /></td>
-                <td><input class="Max41" value="3" /></td>
-                <td><input class="Max42" value="3" /></td>
-                <td><input class="Max43" value="3" /></td>
-                <td><input class="Avail41" value="" /></td>
-                <td><input class="Avail42" value="" /></td>
-                <td><input class="Avail43" value="" /></td>
-                <!-- <td>1</td>
-                <td>1</td>
-                <td>1</td> -->
-
-            </tr>
-       
-        </table>
-    </div>
-
-    <!-- <p class="lol">Computing process hahahhahahah</p> -->
-    <button onclick="addRow();">  
-        +  
-      </button>
-    <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
-        <div class="grid-item">7</div>
-        <div class="grid-item">8</div>
-        <div class="grid-item">9</div>
-      </div>
-    <button onclick="removeRow();">  
-        -  
-      </button>    
-  
-      <!-- Script to Count Number of columns in a table -->
-      <script> 
-        
-      </script> 
-
-    
-</body>
-
+		<script></script>
+	</body>
 </html>
