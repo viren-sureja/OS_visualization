@@ -49,11 +49,13 @@
 
 	<body>
 		<script src="./js/BankersDyn.js"></script>
-
+        <div class="headingPanel">
+			<span>Allocation</span><span>Max</span><span>Available</span>
+		</div>
 		<div style="margin-top: 3%" class="mainTable" style="margin: 10% 20%">
 			<table class="container" id="myTable" style="font-size: 0.8em">
 				<tr>
-					<th></th>
+					<th>No.</th>
 					<th>A</th>
 					<th>B</th>
 					<th>C</th>
@@ -81,9 +83,13 @@
 		</div>
 
 		<!-- <p class="lol">Computing process hahahhahahah</p> -->
-		<div class="controlPanel" style="margin-top: 200px">
-			<button onclick="addRow()">+</button>
-			<button onclick="removeRow()" style="margin-top: 45px">-</button>
+		<div class="controlPanel" style="margin-left: 1350px; margin-top: -30px;" >
+			<button onclick="removeRow()" >-</button>
+			<button onclick="addRow()" style="margin-top: 45px">+</button>
+			
+			
+		</div>
+		<div class="submit" style="margin-top: 50px; margin-bottom: 30px;">
 			<button onclick="submitValue()" style="margin-top: 45px">submit</button>
 		</div>
 

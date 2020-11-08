@@ -430,3 +430,13 @@ li input[type="text"]:focus {
 		vertical-align: top;
 	}
 }
+
+.headingPanel {
+ color: black;
+ margin-bottom: -30px;
+}
+
+.headingPanel span {
+  margin-left: 280px;
+  margin-right: 30px;
+}
