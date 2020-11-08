@@ -1,19 +1,18 @@
 // var remRow = document.getElementById("AddRow");
 var size = 0;
-var removeSize = size+1;
-
 
 function removeRow() {
-	if (removeSize > 0) {
-		document.getElementById("myTable").deleteRow(removeSize);
-		removeSize--;
-		size = removeSize - 1;
-		
+	if (size > -1) {
+		document.getElementById("myTable").deleteRow(size + 1);
+		size--;
 	}
 }
+var width = 165;
 function addRow() {
 	size++;
 	let name = "p" + size;
+	width += 90;
+	document.getElementById("printProcess").style.width = `${width}px`;
 
 	document.getElementById("myTable").innerHTML += `
                     <tr id=${name}>
@@ -30,12 +29,11 @@ function addRow() {
 					</tr>`;
 }
 
-
-
-
 function submitValue() {
 	// $("section").remove();
-	document.getElementById("info").innerHTML = "";
+	var printProcess = document.getElementById("printProcess");
+
+	document.getElementById("printProcess").innerHTML = "";
 	var myTab = document.getElementById("myTable").rows;
 
 	let alloc = [];
@@ -64,7 +62,7 @@ function submitValue() {
 		max.push(tempList);
 	}
 
-	n = size+1;
+	n = size + 1;
 	m = 3;
 	let f = [];
 	for (i = 0; i < n; i++) f[i] = 0;
@@ -125,17 +123,14 @@ function submitValue() {
 	// var mastList = [];
 	// var mastString = "";
 	console.log("Following is the SAFE Sequence");
+	printProcess.innerHTML = "";
 	for (i = 0; i < n; i++) {
 		if (ans[i] >= 0) {
-			addElement("section", "P" + ans[i]);
-			// $dudeoutput1.append("<i>" + ans[i] + "</i>");
-			console.log(` P${ans[i]} ->`);
-			// mastString += ` P${ans[i]} ->`;
-			// compVar.text(mastString);
+			// addElement("section", "P" + ans[i]);
+			printProcess.innerHTML += "P" + ans[i] + " ";
 		} else {
-			addElement("section", "deadlock");
-			// console.log("deadlock!");
-			// compVar.text("DEADLOCK");
+			// addElement("section", "deadlock");
+			printProcess.innerHTML += "deadlock";
 			break;
 		}
 	}

@@ -117,16 +117,16 @@ button {
 	border-radius: 7px;
 }
 
-section {
-	display: inline-flex;
-	margin-top: 60px;
+#printProcess {
+	display: inline-block;
+	margin-top: 90px;
 	margin: 120px 0px 20px 20px;
-	background-color: #c2d5ff;
-	font-size: 120px;
+	/* background-color: #c2d5ff; */
+	font-size: 60px;
 	text-align: center;
 	vertical-align: middle;
 	height: 70px;
-	width: 145px;
+	width: 165px;
 	-webkit-animation: heartbeat 1.5s ease-in-out infinite both;
 	animation: heartbeat 1.5s ease-in-out infinite both;
 }
@@ -239,7 +239,6 @@ section {
 		display: none;
 	}
 }
-
 
 /* for navbar styles */
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200&display=swap");
