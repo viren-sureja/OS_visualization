@@ -2,66 +2,104 @@ let Process0 = 0;
 // let interestP0 = false;
 let Process1 = 1;
 // let interestP1 = false;
-
+var $output = $("#textArea")
 var interest = [false, false];
 
-function EntrySection(process) {
+
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+
+async function EntrySection(process) {
 	let other;
 	other = 1 - process;
 	interest[process] = true;
 	turn = process;
 
-	//////////////////
 	if (turn == 1) {
-		P1Move(100)
+		// P1Move(100)
+		$output.append('Process no.' + process + ' has started.\n');
+		document.getElementById("textArea").scrollTop = document.getElementById(
+			"textArea"
+		).scrollHeight;
+		await sleep(2000);
 	}
 	else {
-		P0Move(100)
+		// P0Move(100)
+		$output.append('Process no.' + process + ' has started.\n');
+		document.getElementById("textArea").scrollTop = document.getElementById(
+			"textArea"
+		).scrollHeight;
+		await sleep(2000);
 	}
-	/////////////////
 
-	if (interest[other] = true && turn == process) {
-		setTimeout(function () {
-
-		}, 5000);
+	if (interest[other] == true && turn == process) {
+		$output.append('Process no.' + other + ' is already in the critical section.\n');
+		document.getElementById("textArea").scrollTop = document.getElementById(
+			"textArea"
+		).scrollHeight;
+		await sleep(3000);
+		return;
 	}
 
 	CriticalSection(process)
 }
 
-function CriticalSection(process) {
+async function CriticalSection(process) {
 
-	////////////////////
 	if (process == 0) {
-		P0Move(200)
+		// P0Move(200)
+		$output.append('Process no.' + process + ' has entered the critical section.\n');
+		document.getElementById("textArea").scrollTop = document.getElementById(
+			"textArea"
+		).scrollHeight;
+		await sleep(2000);
 	}
 	else {
-		P1Move(300)
+		// P1Move(300)
+		$output.append('Process no.' + process + ' has entered the critical section.\n');
+		document.getElementById("textArea").scrollTop = document.getElementById(
+			"textArea"
+		).scrollHeight;
+		await sleep(2000);
 	}
-	////////////////////
 
-
-	var millisecondsToWait = 2500;
-	setTimeout(function () {
-		if (process == 0) {
-			P1Move(100)
-		}
-	}, millisecondsToWait);
-
+	if (process == 0) {
+		// P1Move(100);
+		EntrySection(1 - process);
+	}
+	$output.append('Process no.' + process + ' has exited the critical section.\n');
+	document.getElementById("textArea").scrollTop = document.getElementById(
+		"textArea"
+	).scrollHeight;
+	await sleep(1000);
+	if (process == 0) {
+		// P1Move(100);
+		CriticalSection(1 - process);
+	}
 	ExitSection(process)
 }
 
-function ExitSection(process) {
+async function ExitSection(process) {
 
-	////////////////////
 	if (process == 0) {
-		P0Move(500)
-		CriticalSection(1 - process)
+		$output.append('Process no.' + process + ' has exited.\n');
+		document.getElementById("textArea").scrollTop = document.getElementById(
+			"textArea"
+		).scrollHeight;
+		await sleep(1000);
+		// P0Move(500)
 	}
 	else {
-		P1Move(500)
+		$output.append('Process no.' + process + ' has exited.\n');
+		document.getElementById("textArea").scrollTop = document.getElementById(
+			"textArea"
+		).scrollHeight;
+		await sleep(1000);
+		// P1Move(500)
 	}
-	////////////////////
 
 	interest[process] = false;
 }
@@ -69,9 +107,9 @@ function ExitSection(process) {
 function P0Move(valuetomove1) {
 	var elem1 = document.getElementById("P000");
 	var pos1 = 0;
-	var id1 = setInterval(frame1, 5);
+	var id1 = setInterval(frame1, 15);
 	function frame1() {
-		if (pos1 == 1000) {
+		if (pos1 == 800) {
 			clearInterval(id1);
 		} else {
 			pos1++;
@@ -85,7 +123,7 @@ function P1Move(valuetomove2) {
 	var pos2 = 0;
 	var id2 = setInterval(frame2, 5);
 	function frame2() {
-		if (pos2 == 1000) {
+		if (pos2 == 800) {
 			clearInterval(id2);
 		} else {
 			pos2++;
