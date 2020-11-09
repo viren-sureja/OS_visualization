@@ -407,12 +407,14 @@ li:last-child {
 	max-width: 200px;
 	position: absolute;
 	background: #f4f4f4;
+	z-index: 2;
 }
 .services-dropdown a {
 	display: block;
 	color: #000;
 	padding: 10px 15px;
 	font-size: 18px;
+	
 }
 .services-dropdown a:hover {
 	background: #dcdcdc;

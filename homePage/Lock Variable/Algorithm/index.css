@@ -404,6 +404,7 @@ li:last-child {
 	max-width: 200px;
 	position: absolute;
 	background: #f4f4f4;
+	z-index: 2;
 }
 .services-dropdown a {
 	display: block;
