@@ -1,5 +1,6 @@
-var $output = $(".output")
+var $output = $("#textArea")
 var $props = $(".PR")
+var doc = new jsPDF();
 
 var process_limit_input = 5;
 var process_time_milliseconds = 900;
@@ -29,6 +30,13 @@ async function AcceptInput() {
   while (iteration <= process_time_milliseconds) {
     OptionToProcess();
     iteration++;
+    // var noofpages = Math.floor(iteration/40);
+    // var itr = 0;
+    // if (iteration%40==0) {
+    //   var Status = document.getElementById("textArea").value;
+    //   doc.text(Status, 10, 10);
+    //   doc.addPage();
+    // }
     await sleep(100);
   }
   //********************************//
@@ -45,14 +53,20 @@ function sleep(ms) {
 function Producer(process_no) {
   ProcessStack.push(process_no);
   // console.log('Process no.' + process_no + ' is produced.');
-  $output.append("<section>" + 'Process no.' + process_no + ' is produced.' + "</section>");
+  $output.append('Process no.' + process_no + ' is produced.\n');
+  document.getElementById("textArea").scrollTop = document.getElementById(
+		"textArea"
+	).scrollHeight;
   document.getElementById("P" + process_no).style.background = "black";
   document.getElementById("P" + process_no).style.color = "white";
 }
 
 function Consumer(process_no) {
   // console.log('Process no.' + process_no + ' is consumed.');
-  $output.append("<section>" + 'Process no.' + process_no + ' is consumed.' + "</section>");
+  $output.append('Process no.' + process_no + ' is consumed.\n');
+  document.getElementById("textArea").scrollTop = document.getElementById(
+		"textArea"
+	).scrollHeight;
   document.getElementById("P" + process_no).style.background = "white";
   document.getElementById("P" + process_no).style.color = "black";
 }
@@ -85,3 +99,22 @@ function OptionToProcess() {
   }
 }
 //********************************//
+
+function getPdf() {
+	var allStatus = document.getElementById("textArea").value;
+  
+  // // pageHeight= doc.internal.pageSize.height;
+  // // x = 10
+  // // // Before adding new content
+  // // y = 500 // Height position of new content
+  // // if (y >= pageHeight)
+  // // {
+    
+  // //   y = 0 // Restart height position
+  // // }
+  // // doc.text(x, y, allStatus);
+
+
+	doc.text(allStatus, 10, 10);
+  doc.save(`ProdCons.pdf`);
+}
