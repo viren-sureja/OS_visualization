@@ -1,5 +1,6 @@
 var semaphore;
 var initialSema;
+var semArea = document.getElementById("sem");
 
 starting();
 function starting() {
@@ -21,7 +22,7 @@ function starting() {
 		} else {
 			semaphore = value;
 			initialSema = value;
-			console.log(semaphore);
+			semArea.innerHTML = semaphore;
 
 			swal({
 				title: "Nice!",
@@ -91,7 +92,6 @@ const inSQ = 2;
 const inCS = 3;
 const inCQ = 4;
 
-var semArea = document.getElementById("sem");
 var blinkingBox = document.getElementById("box2");
 semArea.innerHTML = 1;
 

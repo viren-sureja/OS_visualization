@@ -3,6 +3,9 @@ let Process0 = 0;
 let Process1 = 1;
 // let interestP1 = false;
 var $output = $("#textArea")
+var $i0 = $(".interestP0");
+var $i1 = $(".interestP1");
+var $vari = $(".Pruce");
 var interest = [false, false];
 
 
@@ -18,9 +21,11 @@ async function EntrySection(process) {
 	interest[process] = true;
 	turn = process;
 
+	$vari.text('P' + process);
 	if (turn == 1) {
 		// P1Move(100)
 		$output.append('Process no.' + process + ' has started.\n');
+		$i1.text(interest[process]);
 		document.getElementById("textArea").scrollTop = document.getElementById(
 			"textArea"
 		).scrollHeight;
@@ -29,6 +34,7 @@ async function EntrySection(process) {
 	else {
 		// P0Move(100)
 		$output.append('Process no.' + process + ' has started.\n');
+		$i0.text(interest[process]);
 		document.getElementById("textArea").scrollTop = document.getElementById(
 			"textArea"
 		).scrollHeight;
@@ -36,6 +42,7 @@ async function EntrySection(process) {
 	}
 
 	if (interest[other] == true && turn == process) {
+		$vari.text('P' + process);
 		$output.append('Process no.' + other + ' is already in the critical section.\n');
 		document.getElementById("textArea").scrollTop = document.getElementById(
 			"textArea"
@@ -50,6 +57,7 @@ async function EntrySection(process) {
 async function CriticalSection(process) {
 
 	if (process == 0) {
+		$vari.text('P' + process);
 		// P0Move(200)
 		$output.append('Process no.' + process + ' has entered the critical section.\n');
 		document.getElementById("textArea").scrollTop = document.getElementById(
@@ -59,6 +67,7 @@ async function CriticalSection(process) {
 	}
 	else {
 		// P1Move(300)
+		$vari.text('P' + process);
 		$output.append('Process no.' + process + ' has entered the critical section.\n');
 		document.getElementById("textArea").scrollTop = document.getElementById(
 			"textArea"
@@ -85,6 +94,7 @@ async function CriticalSection(process) {
 async function ExitSection(process) {
 
 	if (process == 0) {
+		$vari.text('P' + process);
 		$output.append('Process no.' + process + ' has exited.\n');
 		document.getElementById("textArea").scrollTop = document.getElementById(
 			"textArea"
@@ -93,6 +103,7 @@ async function ExitSection(process) {
 		// P0Move(500)
 	}
 	else {
+		$vari.text('P' + process);
 		$output.append('Process no.' + process + ' has exited.\n');
 		document.getElementById("textArea").scrollTop = document.getElementById(
 			"textArea"
