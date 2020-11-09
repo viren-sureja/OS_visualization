@@ -102,29 +102,43 @@ async function moveup(val) {
 
 
 $(".Process0").on("click",function(){
+  var a=document.getElementById("Pn").value;
+  if(a=="P1" && i1==0){
+    alert("Turn is for process 1");
+  }
+  else{
   verify("P0");
-  i0++;
+  i0++;}
 });
 
 
 
 $(".Process1").on("click",function(){
+  var a=document.getElementById("Pn").value;
+  if(a=="P0" && i0==0){
+    alert("Turn is for process 0");
+  }
+  else{
   verify("P1");
-  i1++;
+  i1++;}
 });
 
 $(".End-process0").on("click",function(){
   if(i0==0){}
   else{
   moveup("P0");
-  i0=0;}
+  i0=0;
+  var inp=document.getElementById("Pn").value="P1";
+}
 });
 
 $(".End-process1").on("click",function(){
   if(i1==0){}
   else{
   moveup("P1");
-  i1=0;}
+  i1=0;
+  var inp=document.getElementById("Pn").value="P0";
+}
 });
 
 
