@@ -49,10 +49,20 @@
 
 	<body>
 		<script src="./js/BankersDyn.js"></script>
-		<h1>Bankers Algorithm</h1>
-		<div class="headingPanel">
-			<span>Allocation</span><span>Max</span><span>Available</span>
+		<div class="myheading tooltip">
+			<p>Banker's Algorithm</p><span class="tooltiptext" style="font-size: 12px;"
+			>The banker’s algorithm is a resource allocation and deadlock avoidance algorithm that tests for safety by simulating the allocation for predetermined maximum possible amounts of all resources, then makes an “s-state” check to test for possible activities, before deciding whether allocation should be allowed to continue.</span
+		>
 		</div>
+		    <div class="mtooltip">
+				Allocation<span class="mtooltiptext">Indicates the number of available resources of each type</span>
+			</div>
+			<div class="mtooltip">
+				Max<span class="mtooltiptext">Defines the maximum demand of each process in a system.</span>
+			</div>
+			<div class="mtooltip">
+				Available<span class="mtooltiptext">Defines the number of resources of each type currently allocated to each process</span>
+			</div>
 		<div style="margin-top: 3%" class="mainTable" style="margin: 10% 20%">
 			<table class="container" id="myTable" style="font-size: 0.8em">
 				<tr>
