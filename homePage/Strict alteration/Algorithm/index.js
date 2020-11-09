@@ -106,6 +106,14 @@ $(".Process0").on("click",function(){
   if(a=="P1" && i1==0){
     alert("Turn is for process 1");
   }
+  else if(i1==1 && i0==1||i1==2 && i0==1){
+    if(a=="P1"){
+    alert("critical section is not empty");
+    }
+    else if(a=="P0"){
+      alert("P0 already in critical section");
+      }
+  }
   else{
   verify("P0");
   i0++;}
@@ -118,13 +126,26 @@ $(".Process1").on("click",function(){
   if(a=="P0" && i0==0){
     alert("Turn is for process 0");
   }
+  else if(i1==1 && i0==1||i0==2 && i1==1){
+    if(a=="P0"){
+      alert("critical section is not empty");
+      }
+    else if(a=="P1"){
+        alert("P1 already in critical section");
+    }
+  }
   else{
   verify("P1");
   i1++;}
 });
 
 $(".End-process0").on("click",function(){
+  var a=document.getElementById("Pn").value;
+  
   if(i0==0){}
+  else if(i0==1 && a=="P1"){
+    alert("P0 is in while loop cannot end here");
+  }
   else{
   moveup("P0");
   i0=0;
@@ -133,7 +154,11 @@ $(".End-process0").on("click",function(){
 });
 
 $(".End-process1").on("click",function(){
+  var a=document.getElementById("Pn").value;
   if(i1==0){}
+  else if(i1==1 && a=="P0"){
+    alert("P1 is in while loop cannot end here");
+  }
   else{
   moveup("P1");
   i1=0;
