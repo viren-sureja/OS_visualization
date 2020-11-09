@@ -76,6 +76,59 @@ h1 {
     justify-content: center;
 }
 
+.Pruce {
+    display: flex;
+    background-color: #0fb1ec;
+    width: 60px;
+    height: 50px;
+    font-size: 42px;
+    text-align: center;
+    margin-left: 550px;
+    margin-top: -50px;
+}
+
+.w1 {
+    display: flex;
+    width: 60px;
+    height: 50px;
+    font-size: 42px;
+    text-align: center;
+    margin-left: 400px;
+
+}
+
+.w2 {
+    display: flex;
+    width: 60px;
+    height: 50px;
+    font-size: 42px;
+    text-align: center;
+    margin-left: 400px;
+    margin-top: 10px;
+}
+
+.interestP0 {
+    display: flex;
+    background-color: #0fb1ec;
+    width: 100px;
+    height: 50px;
+    font-size: 42px;
+    text-align: center;
+    margin-top: -50px;
+    margin-left: 600px;
+}
+
+.interestP1 {
+    display: flex;
+    background-color: #0fb1ec;
+    width: 100px;
+    height: 50px;
+    font-size: 42px;
+    text-align: center;
+    margin-top: -50px;
+    margin-left: 750px;
+}
+
 .P0 {
     background-color: #0fb1ec;
     color: #000000;
