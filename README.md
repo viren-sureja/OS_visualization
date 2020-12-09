@@ -1,4 +1,4 @@
-# Contributing to YouSafe:
+# Contributing to OS_Visualization:
 
 
 
