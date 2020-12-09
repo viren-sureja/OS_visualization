@@ -27,7 +27,7 @@ git clone https://github.com/<your-github-username>/OS_visualization
 **5.** Navigate to the project directory.
 
 ```terminal
-cd YouSafe
+cd OS_visualization
 ```
 
 **6.** Create a new branch.
